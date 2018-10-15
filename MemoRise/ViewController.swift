@@ -7,14 +7,21 @@
 
 
 import UIKit
+import SQLite3
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("memorise.sqlite")
+        
+        var db: OpaquePointer?
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("Error opening Database")
+        } else {
+            if sqlite3_exec(db, "create table if not exists questions(id integer primary key autoincrement,  question text, userid integer)", nil, nil, nil) != SQLITE_OK {
+                print ("Error Creating table: " + String(cString: sqlite3_errmsg(db)!))
+            }
+        }
     }
-
-
 }
-
