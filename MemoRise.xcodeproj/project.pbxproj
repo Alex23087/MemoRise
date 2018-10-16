@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F2606DD2175FE5B0097F963 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2606DC2175FE5B0097F963 /* UserViewController.swift */; };
 		BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651A217483470016EB77 /* NewTopicViewController.swift */; };
 		BAEC651D2174940F0016EB77 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651C2174940F0016EB77 /* TableViewCell.swift */; };
 		F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DE9E21709675000D6A00 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F2606DC2175FE5B0097F963 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		BAEC651A217483470016EB77 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		BAEC651C2174940F0016EB77 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F130DE9B21709675000D6A00 /* MemoRise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoRise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				BAEC651C2174940F0016EB77 /* TableViewCell.swift */,
 				F130DE9E21709675000D6A00 /* AppDelegate.swift */,
 				F130DEA021709675000D6A00 /* ViewController.swift */,
+				2F2606DC2175FE5B0097F963 /* UserViewController.swift */,
 				F130DEA221709675000D6A00 /* Main.storyboard */,
 				F130DEA521709675000D6A00 /* Assets.xcassets */,
 				F130DEA721709675000D6A00 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F178C1A12174FBD70001AAAA /* Question.swift in Sources */,
+				2F2606DD2175FE5B0097F963 /* UserViewController.swift in Sources */,
 				F1480B80217515B300C2AE88 /* AlternativeButton.swift in Sources */,
 				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
