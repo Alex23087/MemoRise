@@ -148,10 +148,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some random question from your own topics will appear!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcV-pU-CmI">
-                                <rect key="frame" x="111" y="294" width="211" height="35"/>
+                                <rect key="frame" x="111" y="294" width="221" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="wcV-pU-CmI" secondAttribute="height" multiplier="211:35" id="LcZ-nl-vOg"/>
-                                    <constraint firstAttribute="width" constant="211" id="W0Z-1h-5Xf"/>
+                                    <constraint firstAttribute="width" secondItem="wcV-pU-CmI" secondAttribute="height" multiplier="211:35" constant="10" id="LcZ-nl-vOg"/>
+                                    <constraint firstAttribute="width" constant="221" id="W0Z-1h-5Xf"/>
                                     <constraint firstAttribute="height" constant="35" id="qk3-B0-sq2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -174,7 +174,7 @@
                             <constraint firstItem="otA-7J-XGD" firstAttribute="top" secondItem="BhB-7Z-2Wg" secondAttribute="bottom" constant="30" id="fFF-qK-1CP"/>
                             <constraint firstItem="hBa-Fd-mXA" firstAttribute="centerY" secondItem="wcV-pU-CmI" secondAttribute="centerY" id="hPf-NP-Rso"/>
                             <constraint firstItem="eam-5x-YE0" firstAttribute="leading" secondItem="hBa-Fd-mXA" secondAttribute="leading" constant="-5" id="tOx-ar-8Sx"/>
-                            <constraint firstItem="otA-7J-XGD" firstAttribute="trailing" secondItem="wcV-pU-CmI" secondAttribute="trailing" constant="10" id="usW-NU-eiI"/>
+                            <constraint firstItem="otA-7J-XGD" firstAttribute="trailing" secondItem="wcV-pU-CmI" secondAttribute="trailing" id="usW-NU-eiI"/>
                             <constraint firstItem="qeR-Rb-Ujm" firstAttribute="bottom" secondItem="pOo-h9-rAl" secondAttribute="bottom" constant="89" id="wjI-O1-LSm"/>
                             <constraint firstItem="wcV-pU-CmI" firstAttribute="top" secondItem="eam-5x-YE0" secondAttribute="bottom" constant="21" id="zav-tT-FFY"/>
                         </constraints>
