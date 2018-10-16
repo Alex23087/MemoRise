@@ -18,10 +18,14 @@ class Topic{
         }
     };
     
-    init(_ name: String){
-        self.name = name;
-        questions = [];
+    convenience init(_ name: String){
+		self.init(name, questions: []);
     }
+	
+	init(_ name: String, questions: [Question]){
+		self.name = name;
+		self.questions = questions;
+	}
     
     func addQuestion(_ question: Question){
         questions.append(question);
