@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Question{
+class Question{
     var question: String;
     var answers: [String];
     var correctAnswer: Int;
