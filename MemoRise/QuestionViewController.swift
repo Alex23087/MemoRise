@@ -26,7 +26,7 @@ class QuestionViewController: UIViewController {
 //        for i in 0..<inQuestion.answers.count{
 //            self.answers[i].isHidden = false
 //        self.answers[i].setTitle(inQuestion.answers[i], for: .normal)
-        self.index = index
+//        self.index = index
         }
     }
 
