@@ -16,17 +16,16 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        // Do any additional setup after loading the view.
+    }
     
-            // Do any additional setup after loading the view.
-    }
-
     func loadQuestion(inQuestion: Question, index: Int) {
-//        self.question.text = inQuestion.question
-//        for i in 0..<inQuestion.answers.count{
-//            self.answers[i].isHidden = false
-//        self.answers[i].setTitle(inQuestion.answers[i], for: .normal)
-//        self.index = index
-        }
+        //        self.question.text = inQuestion.question
+        //        for i in 0..<inQuestion.answers.count{
+        //            self.answers[i].isHidden = false
+        //        self.answers[i].setTitle(inQuestion.answers[i], for: .normal)
+        //        self.index = index
     }
-
+}

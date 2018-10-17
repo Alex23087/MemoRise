@@ -11,6 +11,8 @@
 		64374DA321774015003C5191 /* TopicDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA221774015003C5191 /* TopicDao.swift */; };
 		64374DA621774082003C5191 /* UserDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA521774082003C5191 /* UserDao.swift */; };
 		64374DA8217740A1003C5191 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA7217740A1003C5191 /* User.swift */; };
+		BAE91A7A2177750F000CF16F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A792177750F000CF16F /* GameViewController.swift */; };
+		BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A7B21777571000CF16F /* QuestionViewController.swift */; };
 		BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651A217483470016EB77 /* NewTopicViewController.swift */; };
 		F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */; };
 		F10482CE21771FAF003F2485 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */; };
@@ -49,6 +51,8 @@
 		64374DA221774015003C5191 /* TopicDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDao.swift; sourceTree = "<group>"; };
 		64374DA521774082003C5191 /* UserDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDao.swift; sourceTree = "<group>"; };
 		64374DA7217740A1003C5191 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BAE91A792177750F000CF16F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BAE91A7B21777571000CF16F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		BAEC651A217483470016EB77 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */,
 				BAEC651A217483470016EB77 /* NewTopicViewController.swift */,
 				F178C1A02174FBD70001AAAA /* Question.swift */,
+				BAE91A7B21777571000CF16F /* QuestionViewController.swift */,
+				BAE91A792177750F000CF16F /* GameViewController.swift */,
 			);
 			path = MemoRise;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE91A7A2177750F000CF16F /* GameViewController.swift in Sources */,
 				64374DA8217740A1003C5191 /* User.swift in Sources */,
 				F178C1A12174FBD70001AAAA /* Question.swift in Sources */,
 				2F2606DD2175FE5B0097F963 /* UserViewController.swift in Sources */,
@@ -315,6 +322,7 @@
 				64374DA321774015003C5191 /* TopicDao.swift in Sources */,
 				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
+				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
 				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
 				F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */,
 				BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */,
