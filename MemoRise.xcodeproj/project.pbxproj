@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651A217483470016EB77 /* NewTopicViewController.swift */; };
-		BAEC651D2174940F0016EB77 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651C2174940F0016EB77 /* TableViewCell.swift */; };
+		F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */; };
 		F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DE9E21709675000D6A00 /* AppDelegate.swift */; };
 		F130DEA121709675000D6A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DEA021709675000D6A00 /* ViewController.swift */; };
 		F130DEA421709675000D6A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F130DEA221709675000D6A00 /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		BAEC651A217483470016EB77 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
-		BAEC651C2174940F0016EB77 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		F130DE9B21709675000D6A00 /* MemoRise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoRise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F130DE9E21709675000D6A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F130DEA021709675000D6A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,10 +107,10 @@
 		F130DE9D21709675000D6A00 /* MemoRise */ = {
 			isa = PBXGroup;
 			children = (
-				BAEC651C2174940F0016EB77 /* TableViewCell.swift */,
 				F130DE9E21709675000D6A00 /* AppDelegate.swift */,
 				F130DEA021709675000D6A00 /* ViewController.swift */,
 				F130DEA221709675000D6A00 /* Main.storyboard */,
+				F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */,
 				F130DEA521709675000D6A00 /* Assets.xcassets */,
 				F130DEA721709675000D6A00 /* LaunchScreen.storyboard */,
 				F130DEAA21709676000D6A00 /* Info.plist */,
@@ -275,7 +275,7 @@
 				F1480B80217515B300C2AE88 /* AlternativeButton.swift in Sources */,
 				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
-				BAEC651D2174940F0016EB77 /* TableViewCell.swift in Sources */,
+				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
 				F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */,
 				BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */,
 			);
