@@ -52,6 +52,10 @@ class AddQuestionViewController: UIViewController {
     
     @IBAction func onSave(_ sender: Any) {
         question!.question = textField.text!;
+        if question!.question=="" || (question!.question.replacingOccurrences(of: " ", with: "", options: String.CompareOptions.caseInsensitive) == ""){
+            self.view.makeToast("Please input a question");
+            return;
+        }
         question!.answers = [String]();
         for i in (0..<4){
             if let ans = answerTextFields[i].text{

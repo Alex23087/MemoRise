@@ -30,7 +30,6 @@ class Question{
         while i < answers.count{
             if answers[i]=="" || (answers[i].replacingOccurrences(of: " ", with: "", options: String.CompareOptions.caseInsensitive) == ""){
                 answers.remove(at: i);
-                i = i-1;
                 continue;
             }
             i = i+1;
