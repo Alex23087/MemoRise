@@ -10,6 +10,21 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="KLO-ke-rah">
+            <objects>
+                <viewController id="aaP-Iw-Qd1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTB-go-CrE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5oa-tm-ClF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-dn-IC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-695" y="134"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController">
