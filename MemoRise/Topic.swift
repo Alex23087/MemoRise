@@ -19,7 +19,7 @@ class Topic{
     };
     
     convenience init(_ name: String){
-		self.init(name, questions: []);
+		self.init(name, questions: [Question]());
     }
 	
 	init(_ name: String, questions: [Question]){
