@@ -34,6 +34,10 @@ class Topic{
     func addQuestion(question: String, answers: [String], correctAnswer: Int){
         addQuestion(Question(question, answers, correctAnswer));
     }
+	
+	func getName()->String{
+		return self.name
+	}
     
     func getQuestion(_ index: Int) -> Question{
         return questions[index];
