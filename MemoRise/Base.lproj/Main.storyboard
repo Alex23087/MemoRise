@@ -12,54 +12,73 @@
         <!--Question View Controller-->
         <scene sceneID="KLO-ke-rah">
             <objects>
-                <viewController id="aaP-Iw-Qd1" customClass="QuestionViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aaP-Iw-Qd1" customClass="QuestionViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTB-go-CrE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Domanda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHY-lG-SRi">
-                                <rect key="frame" x="56" y="148" width="74" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="QuestLabel" text="Question" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHY-lG-SRi">
+                                <rect key="frame" x="56" y="71" width="270" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-V2-fCB">
-                                <rect key="frame" x="44" y="221" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Risposta 1"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-V2-fCB">
+                                <rect key="frame" x="48" y="297" width="278" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Lwx-Bk-5LC"/>
+                                </constraints>
+                                <state key="normal" title="Answer 1"/>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-bu-5Um">
-                                <rect key="frame" x="43" y="271" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Risposta 2"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-bu-5Um">
+                                <rect key="frame" x="47" y="347" width="279" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ssv-AU-2sz"/>
+                                </constraints>
+                                <state key="normal" title="Answer 2"/>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-Ib-bCF">
-                                <rect key="frame" x="44" y="318" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Risposta 3"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-Ib-bCF">
+                                <rect key="frame" x="49" y="394" width="277" height="30"/>
+                                <state key="normal" title="Answer 3"/>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-AG-QsS">
-                                <rect key="frame" x="43" y="364" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Risposta 4"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-AG-QsS">
+                                <rect key="frame" x="47" y="440" width="279" height="30"/>
+                                <state key="normal" title="Answer 4"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CPa-V2-fCB" firstAttribute="trailing" secondItem="n2V-bu-5Um" secondAttribute="trailing" id="2Rd-fs-2xR"/>
+                            <constraint firstItem="n2V-bu-5Um" firstAttribute="leading" secondItem="a5I-AG-QsS" secondAttribute="leading" id="46I-CO-cTB"/>
+                            <constraint firstItem="CPa-V2-fCB" firstAttribute="centerX" secondItem="dI3-Ib-bCF" secondAttribute="centerX" id="4pX-1G-iZJ"/>
+                            <constraint firstItem="RHY-lG-SRi" firstAttribute="trailing" secondItem="CPa-V2-fCB" secondAttribute="trailing" id="G2a-si-WCG"/>
+                            <constraint firstItem="n2V-bu-5Um" firstAttribute="top" secondItem="CPa-V2-fCB" secondAttribute="bottom" constant="20" id="JZn-oV-0Yc"/>
+                            <constraint firstItem="5oa-tm-ClF" firstAttribute="bottom" secondItem="a5I-AG-QsS" secondAttribute="bottom" constant="197" id="UvZ-CG-uiY"/>
+                            <constraint firstItem="CPa-V2-fCB" firstAttribute="centerX" secondItem="n2V-bu-5Um" secondAttribute="centerX" id="cZJ-P1-dxA"/>
+                            <constraint firstItem="dI3-Ib-bCF" firstAttribute="top" secondItem="n2V-bu-5Um" secondAttribute="bottom" constant="17" id="gly-u2-udm"/>
+                            <constraint firstItem="CPa-V2-fCB" firstAttribute="centerX" secondItem="eTB-go-CrE" secondAttribute="centerX" id="h9O-ct-CGx"/>
+                            <constraint firstItem="a5I-AG-QsS" firstAttribute="top" secondItem="dI3-Ib-bCF" secondAttribute="bottom" constant="16" id="jpN-fa-3V4"/>
+                            <constraint firstItem="dI3-Ib-bCF" firstAttribute="trailing" secondItem="a5I-AG-QsS" secondAttribute="trailing" id="nO9-Sh-geR"/>
+                            <constraint firstItem="CPa-V2-fCB" firstAttribute="top" secondItem="RHY-lG-SRi" secondAttribute="bottom" constant="146" id="nd7-uq-DYF"/>
+                            <constraint firstItem="n2V-bu-5Um" firstAttribute="trailing" secondItem="dI3-Ib-bCF" secondAttribute="trailing" id="o8P-2s-H85"/>
+                            <constraint firstItem="n2V-bu-5Um" firstAttribute="leading" secondItem="5oa-tm-ClF" secondAttribute="leading" constant="47" id="qot-3u-k4Q"/>
+                            <constraint firstItem="RHY-lG-SRi" firstAttribute="top" secondItem="5oa-tm-ClF" secondAttribute="top" constant="51" id="uTc-iK-FLl"/>
+                            <constraint firstItem="RHY-lG-SRi" firstAttribute="leading" secondItem="5oa-tm-ClF" secondAttribute="leading" constant="56" id="yfA-Ou-Tan"/>
+                            <constraint firstItem="dI3-Ib-bCF" firstAttribute="centerY" secondItem="eTB-go-CrE" secondAttribute="centerY" constant="75.5" id="zfy-3c-edB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5oa-tm-ClF"/>
                     </view>
                     <connections>
                         <outlet property="question" destination="RHY-lG-SRi" id="L6R-66-vO4"/>
-                        <outletCollection property="answers" destination="CPa-V2-fCB" collectionClass="NSMutableArray" id="8mg-FX-6kc"/>
-                        <outletCollection property="answers" destination="CPa-V2-fCB" collectionClass="NSMutableArray" id="dd5-bK-svj"/>
-                        <outletCollection property="answers" destination="n2V-bu-5Um" collectionClass="NSMutableArray" id="vS4-iR-4sM"/>
-                        <outletCollection property="answers" destination="dI3-Ib-bCF" collectionClass="NSMutableArray" id="1EO-Oo-hwp"/>
-                        <outletCollection property="answers" destination="a5I-AG-QsS" collectionClass="NSMutableArray" id="K3a-1K-qlf"/>
+                        <outletCollection property="answers" destination="CPa-V2-fCB" collectionClass="NSMutableArray" id="klR-iJ-38Z"/>
+                        <outletCollection property="answers" destination="n2V-bu-5Um" collectionClass="NSMutableArray" id="6Mn-sF-AYu"/>
+                        <outletCollection property="answers" destination="dI3-Ib-bCF" collectionClass="NSMutableArray" id="p1Y-pJ-nHZ"/>
+                        <outletCollection property="answers" destination="a5I-AG-QsS" collectionClass="NSMutableArray" id="t9D-rj-omf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-dn-IC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1855" y="-128"/>
+            <point key="canvasLocation" x="-1855.2" y="-128.18590704647679"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="EXP-1m-JUD">
@@ -523,7 +542,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="904" height="1612"/>
+        <image name="background.png" width="452" height="806"/>
         <image name="logo2" width="2048" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
