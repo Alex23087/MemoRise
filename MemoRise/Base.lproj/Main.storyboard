@@ -69,6 +69,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Modifica"/>
+                                        <connections>
+                                            <segue destination="FUO-hK-4H9" kind="show" id="M6z-JK-YRt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.44143641800618899" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -215,22 +218,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-Qr-Jc1">
-                                                    <rect key="frame" x="15" y="25" width="12" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question 1" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-dI-XPt">
+                                                    <rect key="frame" x="52" y="0.0" width="308" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-dI-XPt">
-                                                    <rect key="frame" x="35" y="25" width="81" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-Qr-Jc1">
+                                                    <rect key="frame" x="9" y="0.0" width="29" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="29" id="bDJ-sd-uJy"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Tzy-dI-XPt" firstAttribute="leading" secondItem="lYg-Qr-Jc1" secondAttribute="trailing" constant="14" id="7YE-0w-WMX"/>
+                                                <constraint firstItem="lYg-Qr-Jc1" firstAttribute="centerY" secondItem="qy3-Df-PYx" secondAttribute="centerY" id="EkD-eq-oED"/>
+                                                <constraint firstItem="lYg-Qr-Jc1" firstAttribute="leading" secondItem="qy3-Df-PYx" secondAttribute="leadingMargin" constant="-7" id="K7A-mq-bVd"/>
+                                                <constraint firstItem="lYg-Qr-Jc1" firstAttribute="top" secondItem="qy3-Df-PYx" secondAttribute="top" id="Yka-8e-Y2l"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Tzy-dI-XPt" secondAttribute="trailing" constant="-1" id="jBA-ff-qTa"/>
+                                                <constraint firstItem="lYg-Qr-Jc1" firstAttribute="baseline" secondItem="Tzy-dI-XPt" secondAttribute="baseline" id="tW7-BJ-3Zy"/>
+                                                <constraint firstItem="lYg-Qr-Jc1" firstAttribute="firstBaseline" secondItem="Tzy-dI-XPt" secondAttribute="firstBaseline" id="yAy-JW-E9a"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="numLabel" destination="lYg-Qr-Jc1" id="biF-TW-Odd"/>
                                             <outlet property="questionLabel" destination="Tzy-dI-XPt" id="Ehm-Pu-yYH"/>
@@ -266,6 +280,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="SG4-gu-Ym8" id="swl-Eb-fto"/>
+                        <segue destination="anM-mf-5QL" kind="show" identifier="EditQuestion" id="oRs-Eq-5T4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBZ-2h-P3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,7 +373,7 @@
         <!--Add question-->
         <scene sceneID="6Dm-78-YbL">
             <objects>
-                <viewController title="Add question" id="anM-mf-5QL" sceneMemberID="viewController">
+                <viewController title="Add question" id="anM-mf-5QL" customClass="AddQuestionViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PW4-z5-Qd8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,8 +438,20 @@
                         <viewLayoutGuide key="safeArea" id="K1G-BU-uLZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add question" id="zy5-q6-dHV">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Hoh-CL-32T"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Hoh-CL-32T">
+                            <connections>
+                                <action selector="onSave:" destination="anM-mf-5QL" id="GHU-Pb-U3q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="navBar" destination="zy5-q6-dHV" id="ZlE-iz-d65"/>
+                        <outlet property="textField" destination="db6-zh-yfH" id="nCh-u7-rIe"/>
+                        <outletCollection property="answerTextFields" destination="8Ob-Fd-xKb" collectionClass="NSMutableArray" id="9QE-we-hmb"/>
+                        <outletCollection property="answerTextFields" destination="8va-8H-hGl" collectionClass="NSMutableArray" id="olW-rm-vsC"/>
+                        <outletCollection property="answerTextFields" destination="vl5-1d-4LE" collectionClass="NSMutableArray" id="RDH-To-Xpj"/>
+                        <outletCollection property="answerTextFields" destination="FDR-wt-UZX" collectionClass="NSMutableArray" id="aku-WD-iNk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEe-rD-kev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -451,4 +478,7 @@
         <image name="background.png" width="452" height="806"/>
         <image name="logo2" width="2048" height="2048"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Suh-dV-HcN"/>
+    </inferredMetricsTieBreakers>
 </document>
