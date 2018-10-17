@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Question{
+class Question{
     var question: String;
     var answers: [String];
     var correctAnswer: Int;
@@ -23,5 +23,29 @@ struct Question{
         }else{
             self.ID = ID;
         }
+    }
+    
+    func clean(){
+        var i = 0;
+        while i < answers.count{
+            if answers[i]=="" || (answers[i].replacingOccurrences(of: " ", with: "", options: String.CompareOptions.caseInsensitive) == ""){
+                answers.remove(at: i);
+                i = i-1;
+                continue;
+            }
+            i = i+1;
+        }
+    }
+    
+    func containsProfanity() -> Bool{
+        if question.containsProfanity(){
+            return true;
+        }
+        for i in 0..<answers.count{
+            if answers[i].containsProfanity(){
+                return true;
+            }
+        }
+        return false;
     }
 }

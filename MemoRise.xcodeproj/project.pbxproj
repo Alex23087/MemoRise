@@ -17,6 +17,9 @@
 		F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */; };
 		F10482CE21771FAF003F2485 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */; };
 		F10482D0217728EA003F2485 /* AddQuestionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CF217728EA003F2485 /* AddQuestionDelegate.swift */; };
+		F10482D22177BF55003F2485 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D12177BF55003F2485 /* Toast.swift */; };
+		F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D52177C51D003F2485 /* ProfanityFilter.swift */; };
+		F10482D82177C7E7003F2485 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = F10482D72177C7E7003F2485 /* Profanity.json */; };
 		F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DE9E21709675000D6A00 /* AppDelegate.swift */; };
 		F130DEA121709675000D6A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DEA021709675000D6A00 /* ViewController.swift */; };
 		F130DEA421709675000D6A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F130DEA221709675000D6A00 /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 		F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 		F10482CF217728EA003F2485 /* AddQuestionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionDelegate.swift; sourceTree = "<group>"; };
+		F10482D12177BF55003F2485 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		F10482D52177C51D003F2485 /* ProfanityFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
+		F10482D72177C7E7003F2485 /* Profanity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
 		F130DE9B21709675000D6A00 /* MemoRise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoRise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F130DE9E21709675000D6A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F130DEA021709675000D6A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,9 +124,20 @@
 			path = MemoRiseController;
 			sourceTree = "<group>";
 		};
+		F10482D42177BF6E003F2485 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F10482D12177BF55003F2485 /* Toast.swift */,
+				F10482D52177C51D003F2485 /* ProfanityFilter.swift */,
+				F10482D72177C7E7003F2485 /* Profanity.json */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		F130DE9221709675000D6A00 = {
 			isa = PBXGroup;
 			children = (
+				F10482D42177BF6E003F2485 /* lib */,
 				64374DA421774061003C5191 /* MemoRiseController */,
 				64374DA121773FFC003C5191 /* MemoRiseDao */,
 				F130DE9D21709675000D6A00 /* MemoRise */,
@@ -286,6 +303,7 @@
 			files = (
 				F130DEA921709676000D6A00 /* LaunchScreen.storyboard in Resources */,
 				F130DEA621709675000D6A00 /* Assets.xcassets in Resources */,
+				F10482D82177C7E7003F2485 /* Profanity.json in Resources */,
 				F130DEA421709675000D6A00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE91A7A2177750F000CF16F /* GameViewController.swift in Sources */,
+				F10482D22177BF55003F2485 /* Toast.swift in Sources */,
 				64374DA8217740A1003C5191 /* User.swift in Sources */,
 				F178C1A12174FBD70001AAAA /* Question.swift in Sources */,
 				2F2606DD2175FE5B0097F963 /* UserViewController.swift in Sources */,
@@ -324,6 +343,7 @@
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
 				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
 				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
+				F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */,
 				F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */,
 				BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */,
 			);

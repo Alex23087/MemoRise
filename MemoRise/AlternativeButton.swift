@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class AlternativeButton: UIButton {
     
-    var alternateButton: AlternativeButton?;
+    var alternateButton: [AlternativeButton]?;
     @IBInspectable var isSelectedByDefault: Bool = false;
     
     @IBInspectable var cornerRadius: CGFloat = 5;
@@ -23,19 +23,21 @@ class AlternativeButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
-        self.isSelected = isSelectedByDefault;
     }
     
     override func awakeFromNib() {
         self.layer.cornerRadius = cornerRadius;
         self.layer.borderWidth = borderWidth;
         self.layer.masksToBounds = masksToBounds;
+        self.isSelected = isSelectedByDefault;
     }
     
     func unselectAlternateButtons(){
         if alternateButton != nil {
             self.isSelected = true
-            alternateButton?.isSelected = false;
+            for i in 0..<alternateButton!.count{
+                alternateButton![i].isSelected = false;
+            }
         }else{
             toggleButton()
         }
