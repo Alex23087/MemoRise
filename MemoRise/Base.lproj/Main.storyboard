@@ -9,20 +9,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="KLO-ke-rah">
             <objects>
-                <viewController id="aaP-Iw-Qd1" sceneMemberID="viewController">
+                <viewController id="aaP-Iw-Qd1" customClass="QuestionViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTB-go-CrE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Domanda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHY-lG-SRi">
+                                <rect key="frame" x="56" y="148" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-V2-fCB">
+                                <rect key="frame" x="44" y="221" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Risposta 1"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-bu-5Um">
+                                <rect key="frame" x="43" y="271" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Risposta 2"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-Ib-bCF">
+                                <rect key="frame" x="44" y="318" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Risposta 3"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-AG-QsS">
+                                <rect key="frame" x="43" y="364" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Risposta 4"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5oa-tm-ClF"/>
                     </view>
+                    <connections>
+                        <outlet property="question" destination="RHY-lG-SRi" id="L6R-66-vO4"/>
+                        <outletCollection property="answers" destination="CPa-V2-fCB" collectionClass="NSMutableArray" id="8mg-FX-6kc"/>
+                        <outletCollection property="answers" destination="CPa-V2-fCB" collectionClass="NSMutableArray" id="dd5-bK-svj"/>
+                        <outletCollection property="answers" destination="n2V-bu-5Um" collectionClass="NSMutableArray" id="vS4-iR-4sM"/>
+                        <outletCollection property="answers" destination="dI3-Ib-bCF" collectionClass="NSMutableArray" id="1EO-Oo-hwp"/>
+                        <outletCollection property="answers" destination="a5I-AG-QsS" collectionClass="NSMutableArray" id="K3a-1K-qlf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-dn-IC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-695" y="134"/>
+            <point key="canvasLocation" x="-1855" y="-128"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="EXP-1m-JUD">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="bDb-bA-mlk" customClass="GameViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e68-bx-PGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -100,6 +145,9 @@
                                         <rect key="frame" x="198" y="11" width="34" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="bDb-bA-mlk" kind="show" id="Do2-e8-Bxc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-8v-oOz">
                                         <rect key="frame" x="98" y="11" width="44" height="13"/>
@@ -475,7 +523,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="452" height="806"/>
+        <image name="background.png" width="904" height="1612"/>
         <image name="logo2" width="2048" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
