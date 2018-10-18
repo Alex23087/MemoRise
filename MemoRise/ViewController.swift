@@ -10,9 +10,10 @@ import UIKit
 import SQLite3
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
         //      CONNESSIONE SQLITE
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("memorise.sqlite")
         
