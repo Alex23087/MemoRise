@@ -11,15 +11,21 @@ import UIKit
 class NewTopicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddQuestionDelegate {
 
     var currentTopic: Topic = Topic("");
+    var topicIndex: Int = -1;
     private var selQuestion: Int = -1;
+    var topicDelegate: TopicDelegate?;
     
+    @IBOutlet weak var topicNameField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self;
         tableView.delegate = self;
-        loadTopic();
+        topicNameField.text = currentTopic.name;
+        if topicIndex != -1 {
+            navigationItem.title = "Edit Topic";
+        }
     }
     
     @IBAction func onEdit(_ sender: Any) {
@@ -35,20 +41,11 @@ class NewTopicViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell") as! TopicTableViewCell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell") as! QuestionTableViewCell;
         cell.numLabel.text = String(indexPath.row+1);
         cell.questionLabel.text = currentTopic.questions[indexPath.row].question;
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator;
         return cell;
-    }
-    
-    func loadTopic(){
-        if currentTopic.name != "" {
-            return;
-        }
-        currentTopic.name = "Maths";
-        currentTopic.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        currentTopic.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -100,4 +97,19 @@ class NewTopicViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData();
     }
+    
+    @IBAction func onDone(_ sender: Any) {
+        currentTopic.name = topicNameField.text ?? "";
+        if currentTopic.name == "" || currentTopic.name.replacingOccurrences(of: " ", with: "") == ""{
+            self.view.makeToast("Please specify a name for the topic");
+            return;
+        }
+        if currentTopic.questionCount < 1 {
+            self.view.makeToast("Please create at least one question");
+            return;
+        }
+        topicDelegate?.saveTopic(topic: currentTopic, at: topicIndex);
+        navigationController?.popViewController(animated: true);
+    }
+    
 }

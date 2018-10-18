@@ -11,6 +11,7 @@ import UIKit
 class GameCollectionView: UICollectionView, UICollectionViewDataSource {
     
     var gameDelegate : GameDelegate?
+    var ind: Int = -1;
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -22,10 +23,10 @@ class GameCollectionView: UICollectionView, UICollectionViewDataSource {
         cell.pageIndex = indexPath.row;
         cell.delegate = gameDelegate;
         cell.buttonNumber.setTitle(String(indexPath.row), for: .normal)
-        if gameDelegate!.currentIndex == indexPath.row {
-            cell.buttonNumber.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        if ind == indexPath.row {
+            cell.buttonNumber.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1);
         } else {
-            cell.buttonNumber.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.buttonNumber.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1);
         }
         cell.buttonNumber.layer.masksToBounds = true;
         cell.buttonNumber.layer.cornerRadius = /*cell.buttonNumber.layer.visibleRect*/ 15;

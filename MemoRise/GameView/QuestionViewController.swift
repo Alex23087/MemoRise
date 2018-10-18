@@ -25,6 +25,7 @@ class QuestionViewController: UIViewController{
         loadQuestion(inQuestion: questionObj!);
         gameCollection.dataSource = gameCollection;
         gameCollection.gameDelegate = delegate;
+        gameCollection.ind = Qindex;
 //        self.pageControl.numberOfPages = self.NumberOfPages
 //        self.pageControl.currentPage = self.Qindex
 //
