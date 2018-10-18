@@ -8,12 +8,17 @@
 
 import UIKit
 
-class GameViewController: UIPageViewController, UIPageViewControllerDataSource{
+class GameViewController: UIPageViewController, UIPageViewControllerDataSource, GameDelegate{
     var currentIndex: Int = 0
     var currentTopic : Topic = Topic("")
     var questions : [Question] = []
     var mode: [Bool] = [false, false, true]
     var questionViewControllers : [QuestionViewController] = []
+    var questionNum: Int {
+        get{
+            return questions.count;
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +36,7 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource{
             questionViewControllers[i].Qindex = i;
             questionViewControllers[i].questionObj = questions[i];
             questionViewControllers[i].NumberOfPages = questions.count
-            questionViewControllers[i].father = self
-        }
-        for i in 0..<questions.count{
-            questionViewControllers[i].questionViewControllers = self.questionViewControllers
+            questionViewControllers[i].delegate = self
         }
         
         self.setViewControllers([questionViewControllers[0]], direction: .forward, animated: true, completion: nil)
@@ -69,5 +71,7 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource{
         }
     }
     
-    
+    func move(index: Int, direction: UIPageViewController.NavigationDirection) {
+        self.setViewControllers([questionViewControllers[index]], direction: direction, animated: true, completion: nil);
+    }
 }

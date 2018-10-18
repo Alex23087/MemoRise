@@ -20,6 +20,7 @@
 		F10482D22177BF55003F2485 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D12177BF55003F2485 /* Toast.swift */; };
 		F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D52177C51D003F2485 /* ProfanityFilter.swift */; };
 		F10482D82177C7E7003F2485 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = F10482D72177C7E7003F2485 /* Profanity.json */; };
+		F10482DA21787187003F2485 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D921787187003F2485 /* GameDelegate.swift */; };
 		F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DE9E21709675000D6A00 /* AppDelegate.swift */; };
 		F130DEA121709675000D6A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DEA021709675000D6A00 /* ViewController.swift */; };
 		F130DEA421709675000D6A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F130DEA221709675000D6A00 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		F10482D12177BF55003F2485 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F10482D52177C51D003F2485 /* ProfanityFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
 		F10482D72177C7E7003F2485 /* Profanity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
+		F10482D921787187003F2485 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		F130DE9B21709675000D6A00 /* MemoRise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoRise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F130DE9E21709675000D6A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F130DEA021709675000D6A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */,
 				BAEC651A217483470016EB77 /* NewTopicViewController.swift */,
 				F178C1A02174FBD70001AAAA /* Question.swift */,
+				F10482D921787187003F2485 /* GameDelegate.swift */,
 				BAE91A7B21777571000CF16F /* QuestionViewController.swift */,
 				BAE91A792177750F000CF16F /* GameViewController.swift */,
 			);
@@ -341,6 +344,7 @@
 				64374DA321774015003C5191 /* TopicDao.swift in Sources */,
 				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
+				F10482DA21787187003F2485 /* GameDelegate.swift in Sources */,
 				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
 				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
 				F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */,

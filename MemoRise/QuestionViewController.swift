@@ -12,8 +12,7 @@ class QuestionViewController: UIViewController{
     var Qindex : Int = -1;
     var NumberOfPages: Int = -1;
     var questionObj: Question?;
-    var father : UIPageViewController?
-    var questionViewControllers : [QuestionViewController] = []
+    var delegate : GameDelegate?
     
     @IBOutlet var question: UILabel!
     @IBOutlet var answers: [UIButton]!
@@ -31,7 +30,7 @@ class QuestionViewController: UIViewController{
         switch self.Qindex {
         case  0:
                 backButton.backgroundColor = UIColor.darkGray
-        case questionViewControllers.count-1:
+        case delegate!.questionNum-1:
                 nextButton.backgroundColor = UIColor.darkGray
         default:
             break
@@ -39,12 +38,6 @@ class QuestionViewController: UIViewController{
     }
     
     func loadQuestion(inQuestion: Question) {
-        //Istantiating layout
-        /*question = UILabel();
-        answers = [];
-        for i in 0..<4{
-            answers.append(UIButton());
-        }*/
         self.question.text = inQuestion.question
         for i in 0..<inQuestion.answers.count{
             self.answers[i].isHidden = false
@@ -53,14 +46,14 @@ class QuestionViewController: UIViewController{
     }
     @IBOutlet var nextButton: UIButton!
     @IBAction func goNext(_ sender: Any) {
-        if(self.Qindex != questionViewControllers.count-1){
-            father?.setViewControllers([questionViewControllers[Qindex+1]], direction: .forward, animated: true, completion: nil)
+        if(self.Qindex != delegate!.questionNum-1){
+            delegate?.move(index: Qindex+1, direction: .forward);
         }
     }
     @IBOutlet var backButton: UIButton!
     @IBAction func goBack(_ sender: Any) {
         if(self.Qindex != 0){
-            father?.setViewControllers([questionViewControllers[Qindex-1]], direction: .reverse, animated: true, completion: nil)
+            delegate?.move(index: Qindex-1, direction: .reverse);
         }
     }
     
