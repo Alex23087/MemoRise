@@ -13,4 +13,6 @@ protocol GameDelegate {
     var questionNum: Int {get}
     var currentIndex: Int {get}
     func move(index: Int);
+    func setAnswer(index: Int, result: Bool)
+    func getScore() -> Int
 }

@@ -26,18 +26,30 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-V2-fCB">
                                 <rect key="frame" x="48" y="297" width="278" height="30"/>
                                 <state key="normal" title="Answer 1"/>
+                                <connections>
+                                    <action selector="answer1:" destination="aaP-Iw-Qd1" eventType="touchUpInside" id="oEc-Oj-pHK"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-bu-5Um">
                                 <rect key="frame" x="47" y="347" width="279" height="30"/>
                                 <state key="normal" title="Answer 2"/>
+                                <connections>
+                                    <action selector="answer2:" destination="aaP-Iw-Qd1" eventType="touchUpInside" id="UHs-fa-vvt"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-Ib-bCF">
                                 <rect key="frame" x="49" y="394" width="277" height="30"/>
                                 <state key="normal" title="Answer 3"/>
+                                <connections>
+                                    <action selector="answer3:" destination="aaP-Iw-Qd1" eventType="touchUpInside" id="WMF-vr-wFM"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-AG-QsS">
                                 <rect key="frame" x="47" y="440" width="279" height="30"/>
                                 <state key="normal" title="Answer 4"/>
+                                <connections>
+                                    <action selector="answer4:" destination="aaP-Iw-Qd1" eventType="touchUpInside" id="eWJ-1p-m2j"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dS0-vX-P9a">
                                 <rect key="frame" x="49" y="572" width="46" height="30"/>
@@ -130,6 +142,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-dn-IC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1855.2" y="-128.18590704647679"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="W9w-e8-fDN">
+            <objects>
+                <viewController storyboardIdentifier="results" id="8Sc-ax-fKU" customClass="ResultsViewController" customModule="MemoRise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRO-bj-ujX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Complimenti alessandro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S91-xr-AZ8">
+                                <rect key="frame" x="95" y="159" width="184" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hai totalizzato:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq0-Ow-cGQ">
+                                <rect key="frame" x="95" y="209" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-pz-xUM">
+                                <rect key="frame" x="136" y="262" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vJm-lq-hza"/>
+                    </view>
+                    <connections>
+                        <outlet property="result" destination="IEg-pz-xUM" id="jQA-an-50d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRa-2J-6Fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1855" y="644"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="EXP-1m-JUD">

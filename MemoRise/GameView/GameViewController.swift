@@ -13,6 +13,8 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
     var currentTopic : Topic = Topic("")
     var questions : [Question] = []
     var mode: [Bool] = [false, false, true]
+    var correctAnswers: [Bool] = []
+    
     var questionViewControllers : [QuestionViewController] = []
     var questionNum: Int {
         get{
@@ -39,9 +41,10 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
             questionViewControllers.append(storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController);
             print(questions[i].question)
             questionViewControllers[i].Qindex = i;
-            questionViewControllers[i].questionObj = questions[i];
+            questionViewControllers[i].questionObj = questions[i].shuffleAnswers();
             questionViewControllers[i].NumberOfPages = questions.count
             questionViewControllers[i].delegate = self
+            correctAnswers.append(false)
         }
         
         self.setViewControllers([questionViewControllers[0]], direction: .forward, animated: true, completion: nil)
@@ -55,7 +58,7 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
         currentTopic.name = "Maths";
         currentTopic.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
         currentTopic.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        currentTopic.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 0);
+        currentTopic.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -86,5 +89,19 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
         }
         if index < 0 || index > questionNum { return; }
         self.setViewControllers([questionViewControllers[index]], direction: direction!, animated: true, completion: nil);
+    }
+    
+    func setAnswer(index: Int, result: Bool) {
+        correctAnswers[index] = result;
+    }
+    
+    func getScore() -> Int{
+        var sum = 0
+        for i in 0..<correctAnswers.count{
+            if correctAnswers[i] {
+                sum += 1
+            }
+        }
+        return sum
     }
 }

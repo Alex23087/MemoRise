@@ -16,6 +16,7 @@
 		BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A83217876BC000CF16F /* GameDelegate.swift */; };
 		BAE91A87217877AB000CF16F /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A86217877AB000CF16F /* GameCollectionViewCell.swift */; };
 		BAE91A8B2178787D000CF16F /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A8A2178787D000CF16F /* GameCollectionView.swift */; };
+		BAE91A8D2178943D000CF16F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A8C2178943D000CF16F /* ResultsViewController.swift */; };
 		BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651A217483470016EB77 /* NewTopicViewController.swift */; };
 		F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */; };
 		F10482CE21771FAF003F2485 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */; };
@@ -62,6 +63,7 @@
 		BAE91A83217876BC000CF16F /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameDelegate.swift; path = MemoRise/GameDelegate.swift; sourceTree = SOURCE_ROOT; };
 		BAE91A86217877AB000CF16F /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAE91A8A2178787D000CF16F /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
+		BAE91A8C2178943D000CF16F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		BAEC651A217483470016EB77 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				BAE91A792177750F000CF16F /* GameViewController.swift */,
 				BAE91A86217877AB000CF16F /* GameCollectionViewCell.swift */,
 				BAE91A8A2178787D000CF16F /* GameCollectionView.swift */,
+				BAE91A8C2178943D000CF16F /* ResultsViewController.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */,
 				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
 				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
+				BAE91A8D2178943D000CF16F /* ResultsViewController.swift in Sources */,
 				F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */,
 				F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */,
 				BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */,
