@@ -58,12 +58,14 @@ class NewTopicViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let element = currentTopic.questions.remove(at: sourceIndexPath.row);
         currentTopic.questions.insert(element, at: destinationIndexPath.row);
+        tableView.reloadData();
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             currentTopic.questions.remove(at: indexPath.row);
             tableView.deleteRows(at: [indexPath], with: .fade);
+            tableView.reloadData();
         }
     }
     
