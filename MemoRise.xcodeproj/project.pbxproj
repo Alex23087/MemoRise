@@ -13,6 +13,9 @@
 		64374DA8217740A1003C5191 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA7217740A1003C5191 /* User.swift */; };
 		BAE91A7A2177750F000CF16F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A792177750F000CF16F /* GameViewController.swift */; };
 		BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A7B21777571000CF16F /* QuestionViewController.swift */; };
+		BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A83217876BC000CF16F /* GameDelegate.swift */; };
+		BAE91A87217877AB000CF16F /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A86217877AB000CF16F /* GameCollectionViewCell.swift */; };
+		BAE91A8B2178787D000CF16F /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A8A2178787D000CF16F /* GameCollectionView.swift */; };
 		BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC651A217483470016EB77 /* NewTopicViewController.swift */; };
 		F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */; };
 		F10482CE21771FAF003F2485 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */; };
@@ -20,7 +23,6 @@
 		F10482D22177BF55003F2485 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D12177BF55003F2485 /* Toast.swift */; };
 		F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D52177C51D003F2485 /* ProfanityFilter.swift */; };
 		F10482D82177C7E7003F2485 /* Profanity.json in Resources */ = {isa = PBXBuildFile; fileRef = F10482D72177C7E7003F2485 /* Profanity.json */; };
-		F10482DA21787187003F2485 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10482D921787187003F2485 /* GameDelegate.swift */; };
 		F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DE9E21709675000D6A00 /* AppDelegate.swift */; };
 		F130DEA121709675000D6A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DEA021709675000D6A00 /* ViewController.swift */; };
 		F130DEA421709675000D6A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F130DEA221709675000D6A00 /* Main.storyboard */; };
@@ -57,6 +59,9 @@
 		64374DA7217740A1003C5191 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAE91A792177750F000CF16F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BAE91A7B21777571000CF16F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		BAE91A83217876BC000CF16F /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameDelegate.swift; path = MemoRise/GameDelegate.swift; sourceTree = SOURCE_ROOT; };
+		BAE91A86217877AB000CF16F /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		BAE91A8A2178787D000CF16F /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
 		BAEC651A217483470016EB77 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		F10482CB2175FF60003F2485 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +69,6 @@
 		F10482D12177BF55003F2485 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F10482D52177C51D003F2485 /* ProfanityFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfanityFilter.swift; sourceTree = "<group>"; };
 		F10482D72177C7E7003F2485 /* Profanity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Profanity.json; sourceTree = "<group>"; };
-		F10482D921787187003F2485 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		F130DE9B21709675000D6A00 /* MemoRise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoRise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F130DE9E21709675000D6A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F130DEA021709675000D6A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,13 +121,37 @@
 			path = MemoRiseDao;
 			sourceTree = "<group>";
 		};
-		64374DA421774061003C5191 /* MemoRiseController */ = {
+		64374DA421774061003C5191 /* MemoRiseClass */ = {
 			isa = PBXGroup;
 			children = (
+				F1480B7F217515B200C2AE88 /* AlternativeButton.swift */,
+				F178C1A02174FBD70001AAAA /* Question.swift */,
 				F178C1A2217501930001AAAA /* Topic.swift */,
 				64374DA7217740A1003C5191 /* User.swift */,
 			);
-			path = MemoRiseController;
+			path = MemoRiseClass;
+			sourceTree = "<group>";
+		};
+		BAE91A8221787667000CF16F /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				BAE91A83217876BC000CF16F /* GameDelegate.swift */,
+				BAE91A7B21777571000CF16F /* QuestionViewController.swift */,
+				BAE91A792177750F000CF16F /* GameViewController.swift */,
+				BAE91A86217877AB000CF16F /* GameCollectionViewCell.swift */,
+				BAE91A8A2178787D000CF16F /* GameCollectionView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
+		BAE91A85217876E3000CF16F /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				F10482CF217728EA003F2485 /* AddQuestionDelegate.swift */,
+				F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */,
+				BAEC651A217483470016EB77 /* NewTopicViewController.swift */,
+			);
+			path = Topic;
 			sourceTree = "<group>";
 		};
 		F10482D42177BF6E003F2485 /* lib */ = {
@@ -140,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				F10482D42177BF6E003F2485 /* lib */,
-				64374DA421774061003C5191 /* MemoRiseController */,
+				64374DA421774061003C5191 /* MemoRiseClass */,
 				64374DA121773FFC003C5191 /* MemoRiseDao */,
 				F130DE9D21709675000D6A00 /* MemoRise */,
 				F130DEB221709676000D6A00 /* MemoRiseTests */,
@@ -162,6 +190,8 @@
 		F130DE9D21709675000D6A00 /* MemoRise */ = {
 			isa = PBXGroup;
 			children = (
+				BAE91A85217876E3000CF16F /* Topic */,
+				BAE91A8221787667000CF16F /* GameView */,
 				F130DE9E21709675000D6A00 /* AppDelegate.swift */,
 				F130DEA021709675000D6A00 /* ViewController.swift */,
 				2F2606DC2175FE5B0097F963 /* UserViewController.swift */,
@@ -170,14 +200,6 @@
 				F130DEA521709675000D6A00 /* Assets.xcassets */,
 				F130DEA721709675000D6A00 /* LaunchScreen.storyboard */,
 				F130DEAA21709676000D6A00 /* Info.plist */,
-				F10482CF217728EA003F2485 /* AddQuestionDelegate.swift */,
-				F1480B7F217515B200C2AE88 /* AlternativeButton.swift */,
-				F10482CD21771FAF003F2485 /* AddQuestionViewController.swift */,
-				BAEC651A217483470016EB77 /* NewTopicViewController.swift */,
-				F178C1A02174FBD70001AAAA /* Question.swift */,
-				F10482D921787187003F2485 /* GameDelegate.swift */,
-				BAE91A7B21777571000CF16F /* QuestionViewController.swift */,
-				BAE91A792177750F000CF16F /* GameViewController.swift */,
 			);
 			path = MemoRise;
 			sourceTree = "<group>";
@@ -342,9 +364,11 @@
 				F1480B80217515B300C2AE88 /* AlternativeButton.swift in Sources */,
 				F10482D0217728EA003F2485 /* AddQuestionDelegate.swift in Sources */,
 				64374DA321774015003C5191 /* TopicDao.swift in Sources */,
+				BAE91A87217877AB000CF16F /* GameCollectionViewCell.swift in Sources */,
+				BAE91A8B2178787D000CF16F /* GameCollectionView.swift in Sources */,
 				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
-				F10482DA21787187003F2485 /* GameDelegate.swift in Sources */,
+				BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */,
 				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
 				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
 				F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */,

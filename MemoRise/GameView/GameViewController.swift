@@ -9,7 +9,7 @@
 import UIKit
 
 class GameViewController: UIPageViewController, UIPageViewControllerDataSource, GameDelegate{
-    var currentIndex: Int = 0
+    
     var currentTopic : Topic = Topic("")
     var questions : [Question] = []
     var mode: [Bool] = [false, false, true]
@@ -17,6 +17,11 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
     var questionNum: Int {
         get{
             return questions.count;
+        }
+    }
+    var currentIndex: Int{
+        get{
+            return (viewControllers![0] as! QuestionViewController).Qindex;
         }
     }
 
@@ -71,7 +76,15 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
         }
     }
     
-    func move(index: Int, direction: UIPageViewController.NavigationDirection) {
-        self.setViewControllers([questionViewControllers[index]], direction: direction, animated: true, completion: nil);
+    func move(index: Int) {
+        if index == currentIndex { return; }
+        var direction: UIPageViewController.NavigationDirection?;
+        if index > currentIndex {
+            direction = .forward;
+        } else {
+            direction = .reverse;
+        }
+        if index < 0 || index > questionNum { return; }
+        self.setViewControllers([questionViewControllers[index]], direction: direction!, animated: true, completion: nil);
     }
 }

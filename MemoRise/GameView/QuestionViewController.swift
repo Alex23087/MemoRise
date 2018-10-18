@@ -16,15 +16,18 @@ class QuestionViewController: UIViewController{
     
     @IBOutlet var question: UILabel!
     @IBOutlet var answers: [UIButton]!
-    @IBOutlet var pageControl: UIPageControl!
+//    @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var gameCollection: GameCollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadQuestion(inQuestion: questionObj!);
-        self.pageControl.numberOfPages = self.NumberOfPages
-        self.pageControl.currentPage = self.Qindex
-        
+        gameCollection.dataSource = gameCollection;
+        gameCollection.gameDelegate = delegate;
+//        self.pageControl.numberOfPages = self.NumberOfPages
+//        self.pageControl.currentPage = self.Qindex
+//
     }
     override func viewDidAppear(_ animated: Bool) {
         switch self.Qindex {
@@ -47,13 +50,13 @@ class QuestionViewController: UIViewController{
     @IBOutlet var nextButton: UIButton!
     @IBAction func goNext(_ sender: Any) {
         if(self.Qindex != delegate!.questionNum-1){
-            delegate?.move(index: Qindex+1, direction: .forward);
+            delegate?.move(index: Qindex+1);
         }
     }
     @IBOutlet var backButton: UIButton!
     @IBAction func goBack(_ sender: Any) {
         if(self.Qindex != 0){
-            delegate?.move(index: Qindex-1, direction: .reverse);
+            delegate?.move(index: Qindex-1);
         }
     }
     
