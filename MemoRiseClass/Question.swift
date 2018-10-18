@@ -47,4 +47,11 @@ class Question{
         }
         return false;
     }
+    
+    func shuffleAnswers() -> Question{
+        let ans = answers[correctAnswer];
+        answers.shuffle();
+        correctAnswer = answers.firstIndex(of: ans)!;
+        return self;
+    }
 }

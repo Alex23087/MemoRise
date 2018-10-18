@@ -11,6 +11,6 @@ import Foundation
 
 protocol GameDelegate {
     var questionNum: Int {get}
-    func move(index: Int);
     var currentIndex: Int {get}
+    func move(index: Int);
 }
