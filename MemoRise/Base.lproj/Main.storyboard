@@ -45,6 +45,32 @@
                                 <rect key="frame" x="47" y="440" width="279" height="30"/>
                                 <state key="normal" title="Answer 4"/>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hNS-2B-e5J">
+                                <rect key="frame" x="56" y="491" width="270" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="pageControl:" destination="0Nq-Ho-S5m" eventType="valueChanged" id="jHL-hU-fBI"/>
+                                </connections>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dS0-vX-P9a">
+                                <rect key="frame" x="49" y="572" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Before"/>
+                                <connections>
+                                    <action selector="goBack:" destination="aaP-Iw-Qd1" eventType="touchUpInside" id="1TY-M6-uCB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6R-2P-Z1T">
+                                <rect key="frame" x="287" y="572" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="goNext:" destination="aaP-Iw-Qd1" eventType="touchUpInside" id="HoT-vR-akX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -69,6 +95,9 @@
                         <viewLayoutGuide key="safeArea" id="5oa-tm-ClF"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="dS0-vX-P9a" id="w1r-bY-MJD"/>
+                        <outlet property="nextButton" destination="A6R-2P-Z1T" id="OK9-KL-7sY"/>
+                        <outlet property="pageControl" destination="hNS-2B-e5J" id="t88-bc-0lV"/>
                         <outlet property="question" destination="RHY-lG-SRi" id="L6R-66-vO4"/>
                         <outletCollection property="answers" destination="CPa-V2-fCB" collectionClass="NSMutableArray" id="klR-iJ-38Z"/>
                         <outletCollection property="answers" destination="n2V-bu-5Um" collectionClass="NSMutableArray" id="6Mn-sF-AYu"/>
@@ -77,6 +106,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-dn-IC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Nq-Ho-S5m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1855.2" y="-128.18590704647679"/>
         </scene>
@@ -606,7 +636,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="452" height="806"/>
+        <image name="background.png" width="904" height="1612"/>
         <image name="logo2" width="2048" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
