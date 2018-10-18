@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2F2606DD2175FE5B0097F963 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2606DC2175FE5B0097F963 /* UserViewController.swift */; };
-		64374DA321774015003C5191 /* TopicDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA221774015003C5191 /* TopicDao.swift */; };
-		64374DA621774082003C5191 /* UserDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA521774082003C5191 /* UserDao.swift */; };
 		64374DA8217740A1003C5191 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64374DA7217740A1003C5191 /* User.swift */; };
+		64D27FB92178A52D004BF054 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D27FB82178A52D004BF054 /* Topic.swift */; };
+		64D27FBB2178A572004BF054 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D27FBA2178A572004BF054 /* Answer.swift */; };
+		64D27FC02178A5D8004BF054 /* UserDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D27FBC2178A5D8004BF054 /* UserDao.swift */; };
+		64D27FC12178A5D8004BF054 /* TopicDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D27FBD2178A5D8004BF054 /* TopicDao.swift */; };
+		64D27FC22178A5D8004BF054 /* QuestionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D27FBE2178A5D8004BF054 /* QuestionDao.swift */; };
+		64D27FC32178A5D8004BF054 /* AnswerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D27FBF2178A5D8004BF054 /* AnswerDao.swift */; };
 		BAE91A7A2177750F000CF16F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A792177750F000CF16F /* GameViewController.swift */; };
 		BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A7B21777571000CF16F /* QuestionViewController.swift */; };
 		BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE91A83217876BC000CF16F /* GameDelegate.swift */; };
@@ -33,7 +37,6 @@
 		F130DEBF21709676000D6A00 /* MemoRiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130DEBE21709676000D6A00 /* MemoRiseUITests.swift */; };
 		F1480B80217515B300C2AE88 /* AlternativeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1480B7F217515B200C2AE88 /* AlternativeButton.swift */; };
 		F178C1A12174FBD70001AAAA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C1A02174FBD70001AAAA /* Question.swift */; };
-		F178C1A3217501930001AAAA /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C1A2217501930001AAAA /* Topic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +58,13 @@
 
 /* Begin PBXFileReference section */
 		2F2606DC2175FE5B0097F963 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		64374DA221774015003C5191 /* TopicDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDao.swift; sourceTree = "<group>"; };
-		64374DA521774082003C5191 /* UserDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDao.swift; sourceTree = "<group>"; };
 		64374DA7217740A1003C5191 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		64D27FB82178A52D004BF054 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = "../../../Desktop/MemoRise copia/MemoRiseController/Topic.swift"; sourceTree = "<group>"; };
+		64D27FBA2178A572004BF054 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Answer.swift; path = "../../../Desktop/MemoRise copia/MemoRiseController/Answer.swift"; sourceTree = "<group>"; };
+		64D27FBC2178A5D8004BF054 /* UserDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDao.swift; path = "../../../Desktop/MemoRise copia/MemoRiseDao/UserDao.swift"; sourceTree = "<group>"; };
+		64D27FBD2178A5D8004BF054 /* TopicDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicDao.swift; path = "../../../Desktop/MemoRise copia/MemoRiseDao/TopicDao.swift"; sourceTree = "<group>"; };
+		64D27FBE2178A5D8004BF054 /* QuestionDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDao.swift; path = "../../../Desktop/MemoRise copia/MemoRiseDao/QuestionDao.swift"; sourceTree = "<group>"; };
+		64D27FBF2178A5D8004BF054 /* AnswerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerDao.swift; path = "../../../Desktop/MemoRise copia/MemoRiseDao/AnswerDao.swift"; sourceTree = "<group>"; };
 		BAE91A792177750F000CF16F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BAE91A7B21777571000CF16F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		BAE91A83217876BC000CF16F /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameDelegate.swift; path = MemoRise/GameDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -86,7 +93,6 @@
 		F130DEC021709676000D6A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1480B7F217515B200C2AE88 /* AlternativeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternativeButton.swift; sourceTree = "<group>"; };
 		F178C1A02174FBD70001AAAA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		F178C1A2217501930001AAAA /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +123,10 @@
 		64374DA121773FFC003C5191 /* MemoRiseDao */ = {
 			isa = PBXGroup;
 			children = (
-				64374DA221774015003C5191 /* TopicDao.swift */,
-				64374DA521774082003C5191 /* UserDao.swift */,
+				64D27FBF2178A5D8004BF054 /* AnswerDao.swift */,
+				64D27FBE2178A5D8004BF054 /* QuestionDao.swift */,
+				64D27FBD2178A5D8004BF054 /* TopicDao.swift */,
+				64D27FBC2178A5D8004BF054 /* UserDao.swift */,
 			);
 			path = MemoRiseDao;
 			sourceTree = "<group>";
@@ -128,7 +136,8 @@
 			children = (
 				F1480B7F217515B200C2AE88 /* AlternativeButton.swift */,
 				F178C1A02174FBD70001AAAA /* Question.swift */,
-				F178C1A2217501930001AAAA /* Topic.swift */,
+				64D27FB82178A52D004BF054 /* Topic.swift */,
+				64D27FBA2178A572004BF054 /* Answer.swift */,
 				64374DA7217740A1003C5191 /* User.swift */,
 			);
 			path = MemoRiseClass;
@@ -360,23 +369,26 @@
 				BAE91A7A2177750F000CF16F /* GameViewController.swift in Sources */,
 				F10482D22177BF55003F2485 /* Toast.swift in Sources */,
 				64374DA8217740A1003C5191 /* User.swift in Sources */,
+				64D27FC02178A5D8004BF054 /* UserDao.swift in Sources */,
 				F178C1A12174FBD70001AAAA /* Question.swift in Sources */,
 				2F2606DD2175FE5B0097F963 /* UserViewController.swift in Sources */,
+				64D27FC22178A5D8004BF054 /* QuestionDao.swift in Sources */,
+				64D27FBB2178A572004BF054 /* Answer.swift in Sources */,
 				F10482CE21771FAF003F2485 /* AddQuestionViewController.swift in Sources */,
-				64374DA621774082003C5191 /* UserDao.swift in Sources */,
 				F1480B80217515B300C2AE88 /* AlternativeButton.swift in Sources */,
 				F10482D0217728EA003F2485 /* AddQuestionDelegate.swift in Sources */,
-				64374DA321774015003C5191 /* TopicDao.swift in Sources */,
 				BAE91A87217877AB000CF16F /* GameCollectionViewCell.swift in Sources */,
 				BAE91A8B2178787D000CF16F /* GameCollectionView.swift in Sources */,
-				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
+				64D27FB92178A52D004BF054 /* Topic.swift in Sources */,
 				BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */,
 				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
+				64D27FC12178A5D8004BF054 /* TopicDao.swift in Sources */,
 				F10482CC2175FF60003F2485 /* TopicTableViewCell.swift in Sources */,
 				BAE91A8D2178943D000CF16F /* ResultsViewController.swift in Sources */,
 				F10482D62177C51D003F2485 /* ProfanityFilter.swift in Sources */,
 				F130DE9F21709675000D6A00 /* AppDelegate.swift in Sources */,
+				64D27FC32178A5D8004BF054 /* AnswerDao.swift in Sources */,
 				BAEC651B217483470016EB77 /* NewTopicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
