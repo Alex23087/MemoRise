@@ -12,16 +12,12 @@ class User: NSObject {
     
     var name: String
     
-    init(_ name: String) {
+     init(_ name: String) {
         self.name = name;
         
     }
     
     func getName()->String{
         return self.name
-    }
-    
-    func setName(_ name: String){
-        self.name = name
     }
 }

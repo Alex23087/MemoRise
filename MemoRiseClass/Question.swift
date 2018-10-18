@@ -9,30 +9,20 @@
 import Foundation
 
 class Question{
-    private var text: String;
-    private var answers: [Answer];
-   
+    var question: String;
+    var answers: [String];
+    var correctAnswer: Int;
+    var ID: Int;
     
-    init (_ question: String){
-        
-        self.text = question
-        
-    }
-    
-    func getText()->String{
-        return self.text
-    }
-    
-    func setText(_ question: String){
-        self.text=question
-    }
-    
-    func getAnswers()-> [Answer]{
-        return self.answers
-    }
-    
-    func setAnswers(_ answers: [Answer]){
-        self.answers = answers
+    init(_ questionText: String = "", _ answers: [String] = [""], _ correctAnswer: Int = 0, ID: Int = -1){
+        question = questionText;
+        self.answers = answers;
+        self.correctAnswer = correctAnswer;
+        if ID == -1{
+            self.ID = Int.random(in: 0...Int.max);
+        }else{
+            self.ID = ID;
+        }
     }
     
     func clean(){
