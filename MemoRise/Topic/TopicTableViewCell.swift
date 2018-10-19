@@ -35,6 +35,6 @@ class TopicTableViewCell: UITableViewCell {
     }
     
     @objc func toggleFavorite(){
-        delegate?.toggleFavorite(index: Int(numberLabel.text!)!-1);
+        favButton.isSelected = delegate?.toggleFavorite(index: Int(numberLabel.text!)!-1) ?? false;
     }
 }

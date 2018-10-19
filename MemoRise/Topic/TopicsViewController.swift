@@ -14,12 +14,12 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
     var topics: [Topic]?;
     var favorites: [Int]?;
     private var playIndex: Int = -1;
+    var delegate: MainDelegate?;
     
     @IBOutlet weak var topicsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTopics();
         topicsTable.delegate = self;
         topicsTable.dataSource = self;
     }
@@ -39,6 +39,7 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator;
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         cell.delegate = self;
+        cell.favButton.isSelected = topics?[indexPath.row].isFavorite ?? false;
         return cell;
     }
     
@@ -60,15 +61,6 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func loadTopics(){
-        topics = [];
-        let top: Topic = Topic("Maths");
-        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        topics?.append(top);
-    }
-    
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true;
     }
@@ -86,10 +78,12 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         topics?.remove(at: sourceIndexPath.row);
         topics?.insert(top, at: destinationIndexPath.row);
         topicsTable.reloadData();
+        delegate?.moveTopic(from: sourceIndexPath.row, to: destinationIndexPath.row);
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            delegate?.deleteTopic(name: topics![indexPath.row].name);
             topics?.remove(at: indexPath.row);
             topicsTable.deleteRows(at: [indexPath], with: .fade);
             topicsTable.reloadData();
@@ -103,6 +97,7 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
             topics?.remove(at: index);
             topics?.insert(topic, at: index);
         }
+        delegate?.addTopic(topic: topic);
         topicsTable.reloadData();
     }
     
@@ -112,17 +107,26 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         performSegue(withIdentifier: "PlaySegue", sender: self);
     }
     
-    func toggleFavorite(index: Int) {
+    func toggleFavorite(index: Int) -> Bool{
         if favorites == nil { favorites = []; }
-        if favorites!.count<3 {
-            favorites?.append(index);
+        if let favInd = favorites?.firstIndex(of: index){
+            favorites?.remove(at: favInd);
+            topics?[index].isFavorite = false;
+            delegate?.toggleFavorite(topicName: topics![index].name, fav: false);
+            return false;
         } else {
-            if favorites?.contains(index) ?? false{
-                favorites?.remove(at: index);
-            } else {
-                favorites?.remove(at: 0);
+            if favorites!.count < 3 {
                 favorites?.append(index);
+                topics?[index].isFavorite = true;
+                delegate?.toggleFavorite(topicName: topics![index].name, fav: true);
+                return true;
+            } else {
+                return false;
             }
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        delegate?.reload();
     }
 }

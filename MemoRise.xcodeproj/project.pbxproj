@@ -35,6 +35,7 @@
 		F1480B80217515B300C2AE88 /* AlternativeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1480B7F217515B200C2AE88 /* AlternativeButton.swift */; };
 		F15655AE21792CE800581FB0 /* TopicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15655AD21792CE800581FB0 /* TopicDelegate.swift */; };
 		F15655B0217934FF00581FB0 /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15655AF217934FF00581FB0 /* TableDelegate.swift */; };
+		F15655B62179EACB00581FB0 /* MainDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15655B52179EACB00581FB0 /* MainDelegate.swift */; };
 		F178C1A12174FBD70001AAAA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C1A02174FBD70001AAAA /* Question.swift */; };
 		F178C1A3217501930001AAAA /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C1A2217501930001AAAA /* Topic.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		F1480B7F217515B200C2AE88 /* AlternativeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternativeButton.swift; sourceTree = "<group>"; };
 		F15655AD21792CE800581FB0 /* TopicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDelegate.swift; sourceTree = "<group>"; };
 		F15655AF217934FF00581FB0 /* TableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegate.swift; sourceTree = "<group>"; };
+		F15655B52179EACB00581FB0 /* MainDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDelegate.swift; sourceTree = "<group>"; };
 		F178C1A02174FBD70001AAAA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F178C1A2217501930001AAAA /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 				BAE91A8221787667000CF16F /* GameView */,
 				F130DE9E21709675000D6A00 /* AppDelegate.swift */,
 				F130DEA021709675000D6A00 /* ViewController.swift */,
+				F15655B52179EACB00581FB0 /* MainDelegate.swift */,
 				2F2606DC2175FE5B0097F963 /* UserViewController.swift */,
 				F130DEA221709675000D6A00 /* Main.storyboard */,
 				F130DEA521709675000D6A00 /* Assets.xcassets */,
@@ -384,6 +387,7 @@
 				F178C1A3217501930001AAAA /* Topic.swift in Sources */,
 				F130DEA121709675000D6A00 /* ViewController.swift in Sources */,
 				BAE91A84217876BC000CF16F /* GameDelegate.swift in Sources */,
+				F15655B62179EACB00581FB0 /* MainDelegate.swift in Sources */,
 				BAE91A7C21777571000CF16F /* QuestionViewController.swift in Sources */,
 				F10482CC2175FF60003F2485 /* QuestionTableViewCell.swift in Sources */,
 				BAE91A8D2178943D000CF16F /* ResultsViewController.swift in Sources */,
