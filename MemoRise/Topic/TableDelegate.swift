@@ -10,4 +10,5 @@ import Foundation
 
 protocol TableDelegate{
     func play(index: Int);
+    func toggleFavorite(index: Int);
 }
