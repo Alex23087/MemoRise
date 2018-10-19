@@ -12,6 +12,7 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
 
     var topicIndex: Int = -1;
     var topics: [Topic]?;
+    var favorites: [Int]?;
     private var playIndex: Int = -1;
     
     @IBOutlet weak var topicsTable: UITableView!
@@ -109,5 +110,19 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         navigationController?.popViewController(animated: true);
         playIndex = index;
         performSegue(withIdentifier: "PlaySegue", sender: self);
+    }
+    
+    func toggleFavorite(index: Int) {
+        if favorites == nil { favorites = []; }
+        if favorites!.count<3 {
+            favorites?.append(index);
+        } else {
+            if favorites?.contains(index) ?? false{
+                favorites?.remove(at: index);
+            } else {
+                favorites?.remove(at: 0);
+                favorites?.append(index);
+            }
+        }
     }
 }

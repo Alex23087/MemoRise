@@ -11,6 +11,7 @@ import Foundation
 class Topic{
     var name: String;
     var questions: [Question];
+	var favorite: Bool = false;
     
     var questionCount: Int {    //Ok, this is pretty useless, but I wanted to try computed vars
         get{
