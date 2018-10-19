@@ -55,6 +55,8 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
         if currentTopic.name != "" {
             return;
         }
+        daoReference.addTopic(title: "tester")
+        print("delegatetest")
         currentTopic.name = "Maths";
         currentTopic.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
         currentTopic.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
