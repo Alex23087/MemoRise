@@ -9,6 +9,9 @@
 import UIKit
 import SQLite3
 
+var name: String?;
+var surname: String?;
+
 class ViewController: UIViewController, MainDelegate {
     
     var topics: [Topic]?;
@@ -16,6 +19,9 @@ class ViewController: UIViewController, MainDelegate {
     @IBOutlet var favoriteTopicsLabel: [UILabel]!
     var favorites: [Int] = [];
     var topicToPlay: Int = -1;
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
     
     @IBAction func fav1(_ sender: Any) {
         topicToPlay = 0;
@@ -32,7 +38,11 @@ class ViewController: UIViewController, MainDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if topics == nil {
+        for fav in favoriteTopics {
+            fav.layer.masksToBounds = true;
+            fav.layer.cornerRadius = 15;
+        }
+        if topics == nil {
             loadTopics();
         }
         reload();
@@ -106,6 +116,7 @@ class ViewController: UIViewController, MainDelegate {
     }
     
     func reload() {
+        //navigationController?.setNavigationBarHidden(true, animated: true);
         favorites = [];
         for i in 0..<favoriteTopics.count {
             favoriteTopics[i].isHidden = true;
@@ -159,6 +170,7 @@ class ViewController: UIViewController, MainDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TopicsViewController {
+            navigationController?.setNavigationBarHidden(false, animated: true)
             let dest = (segue.destination as! TopicsViewController);
             dest.topics = self.topics;
             dest.delegate = self;
@@ -166,6 +178,11 @@ class ViewController: UIViewController, MainDelegate {
         if segue.destination is GameViewController {
             (segue.destination as! GameViewController).currentTopic = topics![favorites[topicToPlay]];
             topicToPlay = -1;
+        }
+        if segue.destination is UserViewController {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            let dest = segue.destination as! UserViewController;
+            dest.delegate = self;
         }
     }
     
@@ -205,4 +222,16 @@ class ViewController: UIViewController, MainDelegate {
         topics?.insert(tmpTop, at: to);
     }
     
+    func setName(name: String) {
+        nameLabel.text = name;
+    }
+    
+    func setSurname(surname: String) {
+        surnameLabel.text = surname;
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 }

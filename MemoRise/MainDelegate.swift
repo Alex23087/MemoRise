@@ -14,4 +14,6 @@ protocol MainDelegate {
     func addTopic(topic: Topic);
     func moveTopic(from: Int, to: Int);
     func reload();
+    func setName(name: String);
+    func setSurname(surname: String);
 }

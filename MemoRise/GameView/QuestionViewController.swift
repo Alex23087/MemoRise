@@ -33,12 +33,17 @@ class QuestionViewController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         switch self.Qindex {
         case  0:
-                backButton.backgroundColor = UIColor.darkGray
+                backButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         case delegate!.questionNum-1:
-                nextButton.backgroundColor = UIColor.darkGray
+                nextButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
                 nextButton.setTitle("Finish", for: .normal)
         default:
             break
+        }
+        for btn in answers {
+            btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            btn.layer.masksToBounds = true;
+            btn.layer.cornerRadius = 15;
         }
     }
     
@@ -81,12 +86,15 @@ class QuestionViewController: UIViewController{
     func pressButton(pressed : Int){
         for i in 0..<4{
             if i == pressed {
-                answers[i].backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+                answers[i].backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
             } else {
-                answers[i].backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+                answers[i].backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             }
         }
         delegate!.setAnswer(index: Qindex, result: pressed==questionObj!.correctAnswer)
     }
     
+    @IBAction func onHome(_ sender: Any) {
+        navigationController?.popViewController(animated: true);
+    }
 }

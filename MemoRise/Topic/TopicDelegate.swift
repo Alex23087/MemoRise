@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TopicDelegate{
-    func saveTopic(topic: Topic, at index: Int);
+    func saveTopic(topic: Topic, at index: Int) -> Bool;
 }

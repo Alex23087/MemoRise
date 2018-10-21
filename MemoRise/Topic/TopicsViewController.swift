@@ -25,7 +25,7 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func toggleEdit(_ sender: Any) {
-        topicsTable.isEditing = !topicsTable.isEditing;
+        topicsTable.setEditing(!topicsTable.isEditing, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,8 +90,11 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func saveTopic(topic: Topic, at index: Int) {
+    func saveTopic(topic: Topic, at index: Int) -> Bool{
         if index == -1 {
+            if topics?.contains(where: {$0.name == topic.name}) ?? false{
+                return false;
+            }
             topics?.append(topic);
         } else {
             topics?.remove(at: index);
@@ -99,6 +102,7 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         }
         delegate?.addTopic(topic: topic);
         topicsTable.reloadData();
+        return true;
     }
     
     func play(index: Int) {
