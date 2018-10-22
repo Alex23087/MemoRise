@@ -229,8 +229,11 @@ class Dao {
                 print("DELETE statement could not be prepared.")
             }
         }
-
-
+        
+        func updateTopic(topic: Topic){
+            deleteTopic(name: topic.getName())
+            addTopic(topic: topic)
+        }
     }
     
 }

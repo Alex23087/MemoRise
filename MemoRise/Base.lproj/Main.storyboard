@@ -446,7 +446,7 @@
                                     <constraint firstAttribute="height" constant="45" id="A9u-51-Ybt"/>
                                 </constraints>
                                 <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Topics"/>
+                                <state key="normal" title="TOPICS"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -999,7 +999,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="452" height="806"/>
+        <image name="background.png" width="904" height="1612"/>
         <image name="logo2" width="2048" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>
