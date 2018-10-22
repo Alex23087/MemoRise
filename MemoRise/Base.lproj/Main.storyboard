@@ -446,7 +446,7 @@
                                     <constraint firstAttribute="height" constant="45" id="A9u-51-Ybt"/>
                                 </constraints>
                                 <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="TOPICS"/>
+                                <state key="normal" title="Topics"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -648,6 +648,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameEdited:" destination="NuZ-1F-OL3" eventType="editingChanged" id="Sn5-gc-74Y"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-54-5l5">
                                 <rect key="frame" x="268" y="71" width="91" height="66"/>
@@ -672,7 +675,7 @@
                         <viewLayoutGuide key="safeArea" id="0an-Bm-AiK"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Topic" id="t74-Vq-Nyq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="rfZ-CP-cLu">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="rfZ-CP-cLu">
                             <connections>
                                 <action selector="onDone:" destination="NuZ-1F-OL3" id="Qqv-d7-5bo"/>
                             </connections>
@@ -684,6 +687,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="finishButton" destination="rfZ-CP-cLu" id="2fe-dq-7cy"/>
                         <outlet property="tableView" destination="SG4-gu-Ym8" id="swl-Eb-fto"/>
                         <outlet property="topicNameField" destination="K7z-zr-481" id="iA0-yg-agP"/>
                         <segue destination="anM-mf-5QL" kind="show" identifier="EditQuestion" id="oRs-Eq-5T4"/>
@@ -999,7 +1003,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="904" height="1612"/>
+        <image name="background.png" width="452" height="806"/>
         <image name="logo2" width="2048" height="2048"/>
     </resources>
     <inferredMetricsTieBreakers>

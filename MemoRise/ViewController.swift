@@ -230,7 +230,7 @@ class ViewController: UIViewController, MainDelegate {
         surnameLabel.text = surname;
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
