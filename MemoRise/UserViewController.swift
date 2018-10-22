@@ -42,6 +42,23 @@ class UserViewController: UIViewController {
         surname = surnameTextField.text;
         delegate?.setName(name: nameTextField?.text ?? "");
         delegate?.setSurname(surname: surnameTextField?.text ?? "");
+        daoReference.updateTopic(topic: {let out = Topic("User"); out.addQuestion(question: "Data", answers: [name!, surname!], correctAnswer: 0); return out}()) //This thing is a shame, but we have no time
         navigationController?.popViewController(animated: true);
+    }
+    
+    @IBAction func onReset(_ sender: Any) {
+        let dialog = UIAlertController(title: "Are you sure?", message: "This operation cannot be undone", preferredStyle: .actionSheet)
+        dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        dialog.addAction(UIAlertAction(title: "Delete all data", style: .destructive, handler: { dial in
+            daoReference.deleteAll()
+            self.delegate?.resetTopics()
+            self.nameTextField.text = ""
+            self.surnameTextField.text = ""
+            self.delegate?.setName(name: "")
+            self.delegate?.setSurname(surname: "")
+            name = ""
+            surname = ""
+        }))
+        self.present(dialog, animated: true)
     }
 }

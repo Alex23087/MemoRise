@@ -16,4 +16,5 @@ protocol MainDelegate {
     func reload();
     func setName(name: String);
     func setSurname(surname: String);
+    func resetTopics();
 }

@@ -18,10 +18,14 @@ class Question{
         question = questionText;
         self.answers = answers;
         self.correctAnswer = correctAnswer;
+        print(correctAnswer)
         if ID == -1{
             self.ID = Int.random(in: 0...Int.max);
         }else{
             self.ID = ID;
+        }
+        if self.correctAnswer > 3{
+            self.correctAnswer = self.correctAnswer % 3;
         }
     }
     

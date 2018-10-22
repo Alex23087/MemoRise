@@ -30,7 +30,7 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self;
-        loadTopic()
+        //loadTopic()
         if mode[1] {
             questions = currentTopic.getShuffledQuestions()
         } else {
@@ -50,19 +50,19 @@ class GameViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
 
 
-    func loadTopic(){
-        currentTopic.name = "Maths";
-        currentTopic.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        currentTopic.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        currentTopic.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        var topics = daoReference.loadTopic()
-        for i in 0..<topics.count {
-            print(topics[i].getName())
-            for n in 0..<topics[i].questions.count{
-                print(topics[i].questions[n].question)
-            }
-        }
-    }
+//    func loadTopic(){
+//        currentTopic.name = "Maths";
+//        currentTopic.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
+//        currentTopic.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
+//        currentTopic.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
+//        var topics = daoReference.loadTopic()
+//        for i in 0..<topics.count {
+//            print(topics[i].getName())
+//            for n in 0..<topics[i].questions.count{
+//                print(topics[i].questions[n].question)
+//            }
+//        }
+//    }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let qIndex = (viewController as! QuestionViewController).Qindex;

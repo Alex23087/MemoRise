@@ -725,12 +725,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOo-h9-rAl">
-                                <rect key="frame" x="147" y="548" width="81" height="30"/>
-                                <state key="normal" title="Reset score">
+                                <rect key="frame" x="150" y="548" width="75" height="30"/>
+                                <state key="normal" title="Reset Data">
                                     <color key="titleColor" red="1" green="0.13651414857011179" blue="0.068264959555425664" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="ResetScore:" destination="FUO-hK-4H9" eventType="touchUpInside" id="eEZ-AG-IfY"/>
+                                    <action selector="onReset:" destination="FUO-hK-4H9" eventType="touchUpInside" id="gdo-hO-99t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some random question from your own topics will appear!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcV-pU-CmI">

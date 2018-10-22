@@ -20,6 +20,32 @@ class Dao {
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("memorise.sqlite")
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("Error opening Database")
+        } else {
+            if sqlite3_exec(db, """
+                CREATE TABLE IF NOT EXISTS Topic (
+                ID integer PRIMARY KEY AUTOINCREMENT,
+                Name text
+                Favorite integer
+                );
+
+                CREATE TABLE IF NOT EXISTS Questions (
+                    ID integer PRIMARY KEY AUTOINCREMENT,
+                    TopicID text,
+                    Question integer,
+                    CorrectAns integer
+                );
+
+                CREATE TABLE IF NOT EXISTS Answers (
+                    ID integer PRIMARY KEY AUTOINCREMENT,
+                    QuestionID integer,
+                    Answer text
+                );
+
+                """, nil, nil, nil) != SQLITE_OK {
+                print ("Error Creating table: " + String(cString: sqlite3_errmsg(db)!))
+            } else {
+                print("Db loaded")
+            }
         }
         
     }
@@ -49,8 +75,8 @@ class Dao {
     }
 
     func addTopic(topic: Topic) {
-        
-        let insertTopicStatementString = "INSERT INTO Topic (Name) VALUES (?);"
+        print("Called addTopic")
+        let insertTopicStatementString = "INSERT INTO Topic (Name, Favorite) VALUES (?, ?);"
         
         var insertTopicStatement: OpaquePointer? = nil
         
@@ -58,6 +84,7 @@ class Dao {
             let name: NSString = topic.name as NSString
             
             sqlite3_bind_text(insertTopicStatement, 1, name.utf8String, -1, nil)
+            sqlite3_bind_int(insertTopicStatement, 2, topic.isFavorite ? 1 : 0)
 
             if sqlite3_step(insertTopicStatement) == SQLITE_DONE {
                 print("Successfully inserted Topic.")
@@ -86,7 +113,7 @@ class Dao {
                 let correctAns = topic.questions[i].correctAnswer
                 
                 sqlite3_bind_text(insertQuestionStatement, 2, question.utf8String, -1, nil)
-                sqlite3_bind_text(insertQuestionStatement, 3, String(correctAns), -1, nil)
+                sqlite3_bind_int(insertQuestionStatement, 3, Int32(correctAns))
                 sqlite3_bind_text(insertQuestionStatement, 1, String(topicID), -1, nil)
                 
                 if sqlite3_step(insertQuestionStatement) == SQLITE_DONE {
@@ -258,18 +285,18 @@ class Dao {
     
     func loadTopic() -> [Topic]{
         var statement : OpaquePointer? = nil
-        var topics : [Topic] = [Topic("")]
+        var topics : [Topic] = [Topic]()
         var singleTopic : Topic
 
-        if sqlite3_prepare_v2(db, "select Name from Topic", -1, &statement, nil) != SQLITE_OK {
+        if sqlite3_prepare_v2(db, "select Name, Favorite from Topic", -1, &statement, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing select: \(errmsg)")
         }
         while sqlite3_step(statement) == SQLITE_ROW {
-            singleTopic = Topic("")
             let name = String(cString: sqlite3_column_text(statement, 0))
             
-            singleTopic.name = name
+            singleTopic = Topic(name)
+            singleTopic.isFavorite = sqlite3_column_int(statement, 1) == 1 ? true : false
             
             var inner : OpaquePointer? = nil
             
@@ -281,7 +308,7 @@ class Dao {
 //                print(String(cString: sqlite3_column_text(inner, 0)))
 //                print(Int(String(sqlite3_column_int(inner, 1)))!)
 //                print(Int(String(sqlite3_column_int(inner, 2)))!)
-                singleTopic.addQuestion(question: String(cString: sqlite3_column_text(inner, 0)), answers: getAnswersFromQuestionsId(id: Int(String(sqlite3_column_int(inner, 2)))!), correctAnswer: Int(String(sqlite3_column_int(inner, 1)))!)
+                singleTopic.addQuestion(question: String(cString: sqlite3_column_text(inner, 0)), answers: getAnswersFromQuestionsId(id: Int(String(sqlite3_column_int(inner, 2)))!), correctAnswer: Int(sqlite3_column_int(inner, 1)))
                 
             }
             if sqlite3_finalize(inner) != SQLITE_OK {
@@ -297,5 +324,43 @@ class Dao {
             
         }
         return topics
+    }
+    
+    func deleteAll(){
+        if sqlite3_exec(db, """
+            DROP TABLE IF EXISTS Topic;
+            DROP TABLE IF EXISTS Questions;
+            DROP TABLE IF EXISTS Answers;
+        """, nil, nil, nil) != SQLITE_OK {
+            print("Error dropping table: " + String(cString: sqlite3_errmsg(db)!))
+        }
+        print("Db deleted")
+        
+        
+        if sqlite3_exec(db, """
+                CREATE TABLE IF NOT EXISTS Topic (
+                ID integer PRIMARY KEY AUTOINCREMENT,
+                Name text,
+                Favorite integer
+                );
+
+                CREATE TABLE IF NOT EXISTS Questions (
+                    ID integer PRIMARY KEY AUTOINCREMENT,
+                    TopicID text,
+                    Question integer,
+                    CorrectAns integer
+                );
+
+                CREATE TABLE IF NOT EXISTS Answers (
+                    ID integer PRIMARY KEY AUTOINCREMENT,
+                    QuestionID integer,
+                    Answer text
+                );
+
+                """, nil, nil, nil) != SQLITE_OK {
+            print ("Error Creating table: " + String(cString: sqlite3_errmsg(db)!))
+        } else {
+            print("Db recreated")
+        }
     }
 }

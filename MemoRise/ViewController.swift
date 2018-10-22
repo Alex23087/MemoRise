@@ -44,77 +44,13 @@ class ViewController: UIViewController, MainDelegate {
             fav.layer.masksToBounds = true;
             fav.layer.cornerRadius = 23.5;
         }
+        
+        //      CONNESSIONE SQLITE
+        
         if topics == nil {
             loadTopics();
         }
         reload();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        //      CONNESSIONE SQLITE
-        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("memorise.sqlite")
-        
-        var db: OpaquePointer?
-        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
-            print("Error opening Database")
-        } else {
-            if sqlite3_exec(db, """
-                CREATE TABLE IF NOT EXISTS Topic (
-                ID integer PRIMARY KEY AUTOINCREMENT,
-                Name text
-                );
-
-                CREATE TABLE IF NOT EXISTS Questions (
-                    ID integer PRIMARY KEY AUTOINCREMENT,
-                    TopicID text,
-                    Question integer,
-                    CorrectAns integer
-                );
-
-                CREATE TABLE IF NOT EXISTS Answers (
-                    ID integer PRIMARY KEY AUTOINCREMENT,
-                    QuestionID integer,
-                    Answer text
-                );
-
-                """, nil, nil, nil) != SQLITE_OK {
-                print ("Error Creating table: " + String(cString: sqlite3_errmsg(db)!))
-            }
-        }
-        
     }
     
     func reload() {
@@ -141,33 +77,43 @@ class ViewController: UIViewController, MainDelegate {
     
     
     func loadTopics(){
-        topics = [];
-        var top: Topic = Topic("Maths");
-        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        topics?.append(top);
-        top = Topic("Maths");
-        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        topics?.append(top);
-        top = Topic("Maths");
-        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        topics?.append(top);
-        top = Topic("Maths");
-        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        topics?.append(top);
-        top = Topic("Maths");
-        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
-        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
-        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
-        topics?.append(top);
-        topics?[2].isFavorite = true;
+//        topics = [];
+//        var top: Topic = Topic("Maths");
+//        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
+//        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
+//        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
+//        topics?.append(top);
+//        top = Topic("Maths");
+//        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
+//        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
+//        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
+//        topics?.append(top);
+//        top = Topic("Maths");
+//        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
+//        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
+//        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
+//        topics?.append(top);
+//        top = Topic("Maths");
+//        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
+//        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
+//        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
+//        topics?.append(top);
+//        top = Topic("Maths");
+//        top.addQuestion(question: "What is the square root of 4?", answers: ["2","4","8","16"], correctAnswer: 0);
+//        top.addQuestion(question: "2-12", answers: ["-10", "8", "10", "2"], correctAnswer: 0);
+//        top.addQuestion(question: "Is alessandro pro", answers: ["No", "Si", "Fa solo vedere", "Andrea è meglio"], correctAnswer: 1);
+//        topics?.append(top);
+//        topics?[2].isFavorite = true;
+        topics = daoReference.loadTopic();
+        let ind = topics?.firstIndex(where: {top in top.name == "User"}) ?? -1
+        if ind != -1 {
+            let userData = topics?.remove(at: ind)
+            name = userData?.getQuestion(0).answers[0]
+            surname = userData?.getQuestion(0).answers[1]
+            setName(name: name!)
+            setSurname(surname: surname!)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -192,6 +138,7 @@ class ViewController: UIViewController, MainDelegate {
         for i in 0 ..< (topics?.count ?? 0) {
             if topics?[i].name == name{
                 topics?.remove(at: i);
+                daoReference.deleteTopic(name: name)
                 return;
             }
         }
@@ -202,6 +149,7 @@ class ViewController: UIViewController, MainDelegate {
             if topics?[i].name == topicName {
                 topics?[i].isFavorite = fav;
                 print("\(topics![i].name) \(fav)")
+                daoReference.updateTopic(topic: topics![i])
                 return;
             }
         }
@@ -212,10 +160,12 @@ class ViewController: UIViewController, MainDelegate {
             if topics?[i].name == topic.name{
                 topics?.remove(at: i);
                 topics?.insert(topic, at: i);
+                daoReference.updateTopic(topic: topic)
                 return;
             }
         }
         topics?.append(topic);
+        daoReference.addTopic(topic: topic)
     }
     
     func moveTopic(from: Int, to: Int) {
@@ -235,5 +185,11 @@ class ViewController: UIViewController, MainDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func resetTopics() {
+        topics = []
+        loadTopics()
+        reload()
     }
 }
