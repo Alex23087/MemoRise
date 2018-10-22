@@ -29,8 +29,8 @@ class ViewController: UIViewController {
 
                 CREATE TABLE IF NOT EXISTS Questions (
                     ID integer PRIMARY KEY AUTOINCREMENT,
-                    TopicID integer,
-                    Question text,
+                    TopicID text,
+                    Question integer,
                     CorrectAns integer
                 );
 
