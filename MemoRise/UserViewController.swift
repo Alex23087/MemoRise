@@ -40,8 +40,7 @@ class UserViewController: UIViewController {
     @IBAction func onSave(_ sender: Any) {
         name = nameTextField.text;
         surname = surnameTextField.text;
-        delegate?.setName(name: nameTextField?.text ?? "");
-        delegate?.setSurname(surname: surnameTextField?.text ?? "");
+        delegate?.setName(name: (nameTextField?.text ?? "") + " " + (surnameTextField?.text ?? ""));
         daoReference.updateTopic(topic: {let out = Topic("Persistence.User.Data"); out.addQuestion(question: "Data", answers: [name!, surname!], correctAnswer: 0); return out}()) //This thing is a shame, but we have no time
         navigationController?.popViewController(animated: true);
     }
@@ -55,7 +54,6 @@ class UserViewController: UIViewController {
             self.nameTextField.text = ""
             self.surnameTextField.text = ""
             self.delegate?.setName(name: "")
-            self.delegate?.setSurname(surname: "")
             name = ""
             surname = ""
         }))

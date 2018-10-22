@@ -23,7 +23,7 @@ class ViewController: UIViewController, MainDelegate {
     var topicToPlay: Int = -1;
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var topicsLabel: UILabel!
     
     @IBAction func fav1(_ sender: Any) {
         topicToPlay = 0;
@@ -110,8 +110,7 @@ class ViewController: UIViewController, MainDelegate {
             let userData = topics?.remove(at: ind)
             name = userData?.getQuestion(0).answers[0]
             surname = userData?.getQuestion(0).answers[1]
-            setName(name: name!)
-            setSurname(surname: surname!)
+            setName(name: name! + " " + surname!)
         }
         
     }
@@ -178,13 +177,10 @@ class ViewController: UIViewController, MainDelegate {
         nameLabel.text = name;
     }
     
-    func setSurname(surname: String) {
-        surnameLabel.text = surname;
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        topicsLabel.text = "Your Topics: " + String(topics?.count ?? 0)
     }
     
     func resetTopics() {
