@@ -230,10 +230,36 @@ class Dao {
             }
         }
         
-        func updateTopic(topic: Topic){
-            deleteTopic(name: topic.getName())
-            addTopic(topic: topic)
+    }
+    
+    func updateTopic(topic: Topic){
+        deleteTopic(name: topic.getName())
+        addTopic(topic: topic)
+    }
+    
+    func loadTopic(){
+        var topics : [Topic]?
+        var statement : OpaquePointer? = nil
+        var i : Int = 0;
+        var topicName : [String] = []
+        
+        if sqlite3_prepare_v2(db, "select Name from Topic", -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing select: \(errmsg)")
         }
+        
+        while sqlite3_step(statement) == SQLITE_ROW {
+            
+            let name = sqlite3_column_name(statement, 0)
+            print("test")
+        }
+        
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        
+        
     }
     
 }

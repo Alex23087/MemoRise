@@ -14,9 +14,11 @@ var surname: String?;
 
 class ViewController: UIViewController, MainDelegate {
     
-    var topics: [Topic]?;
     @IBOutlet var favoriteTopics: [UIView]!
     @IBOutlet var favoriteTopicsLabel: [UILabel]!
+    
+    var topics: [Topic]?;
+
     var favorites: [Int] = [];
     var topicToPlay: Int = -1;
     
@@ -40,7 +42,7 @@ class ViewController: UIViewController, MainDelegate {
         super.viewDidLoad()
         for fav in favoriteTopics {
             fav.layer.masksToBounds = true;
-            fav.layer.cornerRadius = 15;
+            fav.layer.cornerRadius = 23.5;
         }
         if topics == nil {
             loadTopics();
