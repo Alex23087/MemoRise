@@ -53,7 +53,7 @@ class AddQuestionViewController: UIViewController {
     @IBAction func onSave(_ sender: Any) {
         question!.question = textField.text!;
         if question!.question=="" || (question!.question.replacingOccurrences(of: " ", with: "", options: String.CompareOptions.caseInsensitive) == ""){
-            self.view.makeToast("Please input a question");
+            self.view.makeToast("Please input a question", position: .top);
             return;
         }
         question!.answers = [String]();
@@ -66,11 +66,11 @@ class AddQuestionViewController: UIViewController {
         }
         question!.clean();
         if question!.answers.count < 2 {
-            self.view.makeToast("You need to specify at least two answers");
+            self.view.makeToast("You need to specify at least two answers", position: .top);
             return;
         }
         if question!.containsProfanity() {
-            self.view.makeToast("This is a christian minecraft server, no swearing please");
+            self.view.makeToast("This is a christian minecraft server, no swearing please", position: .top);
             return;
         }
         question!.correctAnswer = -1;
@@ -85,14 +85,14 @@ class AddQuestionViewController: UIViewController {
                         break;
                     }else{
                         //Display toast, empty answer was ticked as correct
-                        self.view.makeToast("Empty answer ticked as correct");
+                        self.view.makeToast("Empty answer ticked as correct", position: .top);
                     }
                 }
             }
         }
         if question!.correctAnswer == -1{
             //Display toast, empty answer was ticked as correct
-            self.view.makeToast("Empty answer ticked as correct");
+            self.view.makeToast("Empty answer ticked as correct", position: .top);
         }else{
             delegate?.addQuestion(question: question!, index: questionNum);
             self.navigationController?.popViewController(animated: true);

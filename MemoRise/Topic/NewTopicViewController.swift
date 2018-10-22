@@ -101,15 +101,18 @@ class NewTopicViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func onDone(_ sender: Any) {
         currentTopic.name = topicNameField.text ?? "";
         if currentTopic.name == "" || currentTopic.name.replacingOccurrences(of: " ", with: "") == ""{
-            self.view.makeToast("Please specify a name for the topic");
+            self.view.makeToast("Please specify a name for the topic", position: .top);
             return;
         }
         if currentTopic.questionCount < 1 {
-            self.view.makeToast("Please create at least one question");
+            self.view.makeToast("Please create at least one question", position: .top);
             return;
         }
-        topicDelegate?.saveTopic(topic: currentTopic, at: topicIndex);
-        navigationController?.popViewController(animated: true);
+        if topicDelegate?.saveTopic(topic: currentTopic, at: topicIndex) ?? false{
+            navigationController?.popViewController(animated: true);
+        } else {
+            self.view.makeToast("This topic already exists, please choose another name", position: .top)
+        }
     }
     
 }

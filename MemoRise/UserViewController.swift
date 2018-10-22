@@ -13,10 +13,12 @@ class UserViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
+    var delegate: MainDelegate?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        nameTextField.text = name;
+        surnameTextField.text = surname;
     }
     
     //MARK:Properties
@@ -35,4 +37,11 @@ class UserViewController: UIViewController {
     }
     */
 
+    @IBAction func onSave(_ sender: Any) {
+        name = nameTextField.text;
+        surname = surnameTextField.text;
+        delegate?.setName(name: nameTextField?.text ?? "");
+        delegate?.setSurname(surname: surnameTextField?.text ?? "");
+        navigationController?.popViewController(animated: true);
+    }
 }
