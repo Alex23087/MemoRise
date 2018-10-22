@@ -230,10 +230,72 @@ class Dao {
             }
         }
         
-        func updateTopic(topic: Topic){
-            deleteTopic(name: topic.getName())
-            addTopic(topic: topic)
-        }
     }
     
+    func updateTopic(topic: Topic){
+        deleteTopic(name: topic.getName())
+        addTopic(topic: topic)
+    }
+    
+    func getAnswersFromQuestionsId(id: Int) -> [String]{
+        var statement : OpaquePointer? = nil
+        var answers : [String] = []
+        if sqlite3_prepare_v2(db, "select Answer FROM Answers WHERE QuestionID = \(id)", -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing select: \(errmsg)")
+        }
+        
+        while sqlite3_step(statement) == SQLITE_ROW {
+            answers.append(String(cString: sqlite3_column_text(statement, 0)))
+        }
+        
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        return answers
+    }
+    
+    func loadTopic() -> [Topic]{
+        var statement : OpaquePointer? = nil
+        var topics : [Topic] = [Topic("")]
+        var singleTopic : Topic
+
+        if sqlite3_prepare_v2(db, "select Name from Topic", -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing select: \(errmsg)")
+        }
+        while sqlite3_step(statement) == SQLITE_ROW {
+            singleTopic = Topic("")
+            let name = String(cString: sqlite3_column_text(statement, 0))
+            
+            singleTopic.name = name
+            
+            var inner : OpaquePointer? = nil
+            
+            if sqlite3_prepare_v2(db, "select Question, CorrectAns, ID from Questions WHERE TopicID = \(getTopicId(name: name))", -1, &inner, nil) != SQLITE_OK {
+                let errmsg = String(cString: sqlite3_errmsg(db)!)
+                print("error preparing select: \(errmsg)")
+            }
+            while sqlite3_step(inner) == SQLITE_ROW {
+//                print(String(cString: sqlite3_column_text(inner, 0)))
+//                print(Int(String(sqlite3_column_int(inner, 1)))!)
+//                print(Int(String(sqlite3_column_int(inner, 2)))!)
+                singleTopic.addQuestion(question: String(cString: sqlite3_column_text(inner, 0)), answers: getAnswersFromQuestionsId(id: Int(String(sqlite3_column_int(inner, 2)))!), correctAnswer: Int(String(sqlite3_column_int(inner, 1)))!)
+                
+            }
+            if sqlite3_finalize(inner) != SQLITE_OK {
+                let errmsg = String(cString: sqlite3_errmsg(db)!)
+                print("error finalizing prepared statement: \(errmsg)")
+                
+            }
+            topics.append(singleTopic)
+        }
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error finalizing prepared statement: \(errmsg)")
+            
+        }
+        return topics
+    }
 }
