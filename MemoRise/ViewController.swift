@@ -105,7 +105,7 @@ class ViewController: UIViewController, MainDelegate {
 //        topics?.append(top);
 //        topics?[2].isFavorite = true;
         topics = daoReference.loadTopic();
-        let ind = topics?.firstIndex(where: {top in top.name == "User"}) ?? -1
+        let ind = topics?.firstIndex(where: {top in top.name == "Persistence.User.Data"}) ?? -1
         if ind != -1 {
             let userData = topics?.remove(at: ind)
             name = userData?.getQuestion(0).answers[0]

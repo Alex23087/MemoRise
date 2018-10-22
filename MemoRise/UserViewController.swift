@@ -42,7 +42,7 @@ class UserViewController: UIViewController {
         surname = surnameTextField.text;
         delegate?.setName(name: nameTextField?.text ?? "");
         delegate?.setSurname(surname: surnameTextField?.text ?? "");
-        daoReference.updateTopic(topic: {let out = Topic("User"); out.addQuestion(question: "Data", answers: [name!, surname!], correctAnswer: 0); return out}()) //This thing is a shame, but we have no time
+        daoReference.updateTopic(topic: {let out = Topic("Persistence.User.Data"); out.addQuestion(question: "Data", answers: [name!, surname!], correctAnswer: 0); return out}()) //This thing is a shame, but we have no time
         navigationController?.popViewController(animated: true);
     }
     

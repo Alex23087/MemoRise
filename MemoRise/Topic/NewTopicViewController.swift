@@ -115,6 +115,10 @@ class NewTopicViewController: UIViewController, UITableViewDataSource, UITableVi
         if !edited {
             navigationController?.popViewController(animated: true);
         } else {
+            if currentTopic.name == "Persistence.User.Data"{
+                self.view.makeToast("Please choose another name", position: .top)
+                return
+            }
             if currentTopic.name == "" || currentTopic.name.replacingOccurrences(of: " ", with: "") == ""{
                 let dialog = UIAlertController(title: "Your topic has no name", message: "Do you want to exit without saving?", preferredStyle: .actionSheet)
                 dialog.addAction(UIAlertAction(title: "Continue Editing", style: .default, handler: nil))
