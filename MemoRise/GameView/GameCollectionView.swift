@@ -22,11 +22,13 @@ class GameCollectionView: UICollectionView, UICollectionViewDataSource {
         let cell = self.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameCollectionViewCell;
         cell.pageIndex = indexPath.row;
         cell.delegate = gameDelegate;
-        cell.buttonNumber.setTitle(String(indexPath.row), for: .normal)
+        cell.buttonNumber.setTitle(String(indexPath.row+1), for: .normal)
         if ind == indexPath.row {
-            cell.buttonNumber.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1);
+            cell.buttonNumber.backgroundColor = #colorLiteral(red: 0, green: 0.4500676394, blue: 0.6861290336, alpha: 1);
+            cell.buttonNumber.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal);
         } else {
             cell.buttonNumber.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1);
+            cell.buttonNumber.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal);
         }
         cell.buttonNumber.layer.masksToBounds = true;
         cell.buttonNumber.layer.cornerRadius = /*cell.buttonNumber.layer.visibleRect*/ 15;

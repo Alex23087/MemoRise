@@ -361,8 +361,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MemoRise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmb-tB-YE3">
-                                <rect key="frame" x="138" y="84" width="99" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <rect key="frame" x="123.5" y="84" width="128" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -466,6 +466,7 @@
                             <constraint firstItem="Gmb-tB-YE3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5uL-tO-90a"/>
                             <constraint firstItem="dGf-jR-0Q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="8uD-ls-CsP"/>
                             <constraint firstItem="DgJ-Te-J4u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="CKh-Xj-N3i"/>
+                            <constraint firstItem="fna-Sf-12G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DbC-gL-Hvl"/>
                             <constraint firstItem="dGf-jR-0Q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="EMA-Pc-QZB"/>
                             <constraint firstItem="bsi-cf-t06" firstAttribute="top" secondItem="rFg-ES-dz7" secondAttribute="bottom" constant="35" id="HLY-Ey-1EO"/>
                             <constraint firstItem="rFg-ES-dz7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L2I-x5-jEi"/>
@@ -475,7 +476,7 @@
                             <constraint firstItem="dGf-jR-0Q3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TBv-9K-1Zc"/>
                             <constraint firstItem="DgJ-Te-J4u" firstAttribute="top" secondItem="dGf-jR-0Q3" secondAttribute="bottom" constant="20" id="VCb-aG-9S7"/>
                             <constraint firstItem="UM3-7S-KgD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="amE-mi-16h"/>
-                            <constraint firstItem="Gmb-tB-YE3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fRs-mb-fsQ"/>
+                            <constraint firstItem="Gmb-tB-YE3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fRs-mb-fsQ" userLabel="MemoRise.top = Safe Area.top + 30"/>
                             <constraint firstItem="DgJ-Te-J4u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fbq-Oy-wkv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CyJ-TU-uLm" secondAttribute="bottom" constant="20" id="gII-iZ-enf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rFg-ES-dz7" secondAttribute="trailing" constant="70" id="hgP-uw-s0K"/>
